@@ -4,25 +4,34 @@ using UnityEngine;
 
 public class TankController2 : MonoBehaviour {
 
+	public float maxSpeed = 1;
+	public float rotationSpeed = 1;
+
 	private Rigidbody2D rb;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		rb = this.GetComponent<Rigidbody2D>();
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
+	void Update() {
+
+
 		float hMove = Input.GetAxis("Horizontal");
 		float vMove = Input.GetAxis("Vertical");
 
-		Debug.Log(hMove / vMove);
+		Vector3 move = Vector3.zero;
+		move.x = hMove;
+		move.y = vMove;
 
-		float direction = Mathf.Tan(hMove / vMove);
+		// Move
 
-//		Debug.Log(direction);
-
-		// rb.rotation = direction;
+		if (move != Vector3.zero) {
+			Vector3 dir = move;
+			float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) - 90;
+			transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+		}
 	}
 
 }
