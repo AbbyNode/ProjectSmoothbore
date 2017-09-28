@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 1
-  rotationSpeed: 1
+  rotationSpeed: 180
 --- !u!50 &1455359843
 Rigidbody2D:
   serializedVersion: 4
@@ -497,7 +497,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2f734729c397d5c4ab7c629c4f7e068e, type: 3}
+  m_Sprite: {fileID: 21300018, guid: a79b4a96d61cf7848af1cefb58402062, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

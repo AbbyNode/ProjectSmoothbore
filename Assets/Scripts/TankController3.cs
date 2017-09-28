@@ -26,7 +26,7 @@ public class TankController3 : MonoBehaviour {
 		Vector3 move = Vector3.zero;
 		move.x = hMove;
 		move.y = vMove;
-        rb.velocity = new Vector3(hMove, vMove, 0);
+       //  rb.velocity = new Vector3(hMove, vMove, 0);
 
 		// Move
 
