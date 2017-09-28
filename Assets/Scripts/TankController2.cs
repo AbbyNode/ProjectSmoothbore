@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class TankController2 : MonoBehaviour {
 
-	public float maxSpeed = 1;
-	public float rotationSpeed = 90; // Degrees per second
+	public float maxSpeed = 2; // Units per second
+	public float rotationSpeed = 360; // Degrees per second
 
 	private Rigidbody2D rb;
+
+	// private float moveRotationThreshold = 0.1f;
 
 	void Start() {
 		rb = this.GetComponent<Rigidbody2D>();
 	}
 
 	void Update() {
-		Vector3 inputMove = Vector3.zero;
+		Vector2 inputMove = Vector2.zero;
 		inputMove.x = Input.GetAxis("Horizontal");
 		inputMove.y = Input.GetAxis("Vertical");
 
-		// Move
-
-		if (inputMove != Vector3.zero) {
+		if (inputMove != Vector2.zero) {
 			// Input angle, clamped between 0 and 360
 			float inputAngle = (Mathf.Atan2(inputMove.y, inputMove.x) * Mathf.Rad2Deg);
 			while (inputAngle < 0) {
@@ -35,17 +35,28 @@ public class TankController2 : MonoBehaviour {
 				angleDiff += 360;
 			} else if (angleDiff > 180) {
 				angleDiff -= 360;
+			} else if (angleDiff == 180) { // Prefer clockwise full turns;
+				angleDiff = -180;
 			}
 
-			float rotateAmt = Time.deltaTime * rotationSpeed;
-			if (angleDiff < 0) {
-				rotateAmt *= -1;
-				rotateAmt = Mathf.Max(rotateAmt, angleDiff);
-			} else { // angleDiff > 0
-				rotateAmt = Mathf.Min(rotateAmt, angleDiff);
+			// Rotate if needed
+			if (angleDiff != 0) {
+				float rotateAmt = Time.deltaTime * rotationSpeed; // Usual rotate amt
+				if (angleDiff < 0) {
+					rotateAmt *= -1;
+					rotateAmt = Mathf.Max(rotateAmt, angleDiff); // Clamp with angleDiff
+				} else { // angleDiff > 0
+					rotateAmt = Mathf.Min(rotateAmt, angleDiff); // Clamp with angleDiff
+				}
+				transform.eulerAngles = new Vector3(0, 0, currentAngle + rotateAmt); // Add to rotation
 			}
 
-			transform.eulerAngles = new Vector3(0, 0, currentAngle + rotateAmt);
+			// Move
+			if (Input.GetAxisRaw("Anchor") == 0) { // Not anchored
+				float moveAmt = Time.deltaTime * maxSpeed; // Usual move amt
+				moveAmt *= ((180 - Mathf.Abs(angleDiff)) / 180); // Reduce if facing away
+				transform.position += transform.right * moveAmt;
+			}
 		}
 	}
 
