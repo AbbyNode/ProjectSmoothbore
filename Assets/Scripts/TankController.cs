@@ -4,72 +4,51 @@ using UnityEngine;
 
 public class TankController : MonoBehaviour {
 
-    Rigidbody2D rb;
-    public float movementSpeed;
-    public float rotateSpeed;
-    public GameObject shellObject;
-    private float nextfire;
-    public Transform spawnPoint;
-    public float shootForce;
+	public float maxSpeed = 2; // Units per second
+	public float rotationSpeed = 360; // Degrees per second
 
-    GameObject bullet;
-    GameObject bore;
-	// Use this for initialization
-	void Start () {
-        rb = GetComponent<Rigidbody2D>();
-        bore = GameObject.Find("bore");
+	void Update() {
+		Vector2 inputMove = Vector2.zero;
+		inputMove.x = Input.GetAxis("Horizontal");
+		inputMove.y = Input.GetAxis("Vertical");
 
-        nextfire = Time.time + 1;
+		if (inputMove != Vector2.zero) {
+			// Input angle, clamped between 0 and 360
+			float inputAngle = (Mathf.Atan2(inputMove.y, inputMove.x) * Mathf.Rad2Deg);
+			while (inputAngle < 0) {
+				inputAngle += 360;
+			}
+
+			float currentAngle = transform.eulerAngles.z;
+
+			// Angle diff, soft clamped between -180 and 180
+			float angleDiff = inputAngle - currentAngle;
+			if (angleDiff < -180) {
+				angleDiff += 360;
+			} else if (angleDiff > 180) {
+				angleDiff -= 360;
+			} else if (angleDiff == 180) { // Prefer clockwise full turns;
+				angleDiff = -180;
+			}
+
+			// Rotate if needed
+			if (angleDiff != 0) {
+				float rotateAmt = Time.deltaTime * rotationSpeed; // Usual rotate amt
+				if (angleDiff < 0) {
+					rotateAmt *= -1;
+					rotateAmt = Mathf.Max(rotateAmt, angleDiff); // Clamp with angleDiff
+				} else { // angleDiff > 0
+					rotateAmt = Mathf.Min(rotateAmt, angleDiff); // Clamp with angleDiff
+				}
+				transform.eulerAngles = new Vector3(0, 0, currentAngle + rotateAmt); // Add to rotation
+			}
+
+			// Move
+			if (Input.GetAxisRaw("Anchor") == 0) { // Not anchored
+				float moveAmt = Time.deltaTime * maxSpeed; // Usual move amt
+				moveAmt *= ((180 - Mathf.Abs(angleDiff)) / 180); // Reduce if facing away
+				transform.position += transform.right * moveAmt;
+			}
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(0, movementSpeed, 0);
-            // moving this gameobject upward by increasing position y.
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(0, -movementSpeed, 0);
-            // moving this gameobject upward by decreasing position y.
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(0, 0, rotateSpeed);
-            //rotating the tank to the left
-         
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(0, 0, -rotateSpeed);
-            //rotating the the tank to the right
-           
-        }
-        if (Input.GetKey(KeyCode.E))
-        {      
-            bore.transform.Rotate(0, 0, -rotateSpeed);
-            // tank gun rotation or aiming to the left
-        }
-        if (Input.GetKey(KeyCode.Q))
-        {
-            bore.transform.Rotate(0, 0, rotateSpeed);
-            //aiming to the right
-        }
-        if (Input.GetButton("Fire1") && Time.time > nextfire)
-        {
-            nextfire = Time.time + 1;
-            Fire();
-        }
-
-
-    }
-    void Fire()
-    {
-        bullet = Instantiate(shellObject, spawnPoint.position, spawnPoint.rotation);
-        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * 10;
-        Destroy(bullet, 2.0f);
-
-    }
-
 }
