@@ -1,13 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;     //Oct 7 ,2017
 
-public class TankController : MonoBehaviour {
+public class TankController1 : MonoBehaviour {
 
 	public float maxSpeed = 2; // Units per second
 	public float rotationSpeed = 360; // Degrees per second
 
-	void Update() {
+    //Oct 7 ,2017..........
+    public float maxEnergy;
+    public float currentEnergy;
+    public float energyNormalSpeed = 1.0f;
+
+    public Slider energybar;
+
+    void Start()
+    {
+        currentEnergy = 0;
+
+        energybar.value = calculateEnergy();
+    }
+
+    void Update() {
 		Vector2 inputMove = Vector2.zero;
 		inputMove.x = Input.GetAxis("Horizontal");
 		inputMove.y = Input.GetAxis("Vertical");
@@ -48,8 +63,18 @@ public class TankController : MonoBehaviour {
 				float moveAmt = Time.deltaTime * maxSpeed; // Usual move amt
 				moveAmt *= ((180 - Mathf.Abs(angleDiff)) / 180); // Reduce if facing away
 				transform.position += transform.right * moveAmt;
-                Debug.Log("moving");
-			}
+              
+                //Oct 7 ,2017..........
+                currentEnergy += energyNormalSpeed;
+                energybar.value = calculateEnergy();
+                // Debug.Log("moving");
+            }
 		}
-	}
+     
+    }
+    //Oct 7 ,2017..........
+    float calculateEnergy()
+    {
+        return currentEnergy / maxEnergy;
+    }
 }
