@@ -1,13 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TankController : MonoBehaviour
 {
-
     public float maxSpeed = 2; // Units per second
     public float rotationSpeed = 360; // Degrees per second
     public int controllerNumber;
+
+	private UnityEvent moveEvent;
+
+	private EventManager em;
+
+	void Start() {
+		em = this.GetComponent<EventManager>();
+
+		moveEvent = em.GetEvent("move");
+	}
 
     void Update()
     {
@@ -63,7 +73,8 @@ public class TankController : MonoBehaviour
                 float moveAmt = Time.deltaTime * maxSpeed; // Usual move amt
                 moveAmt *= ((180 - Mathf.Abs(angleDiff)) / 180); // Reduce if facing away
                 transform.position += transform.right * moveAmt;
-            }
+				moveEvent.Invoke();
+			}
         }
     }
 }

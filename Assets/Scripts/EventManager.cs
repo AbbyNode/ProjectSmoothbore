@@ -5,11 +5,7 @@ using UnityEngine.Events;
 
 public class EventManager : MonoBehaviour {
 
-	private Dictionary<string, UnityEvent> _events;
-	
-	void Start() {
-		_events = new Dictionary<string, UnityEvent>();
-	}
+	private Dictionary<string, UnityEvent> _events = new Dictionary<string, UnityEvent>();
 
 	public UnityEvent GetEvent(string name) {
 		UnityEvent e;
@@ -20,7 +16,7 @@ public class EventManager : MonoBehaviour {
 			e = new UnityEvent();
 			_events.Add(name, e);
 		}
-
+		
 		return e;
 	}
 }
