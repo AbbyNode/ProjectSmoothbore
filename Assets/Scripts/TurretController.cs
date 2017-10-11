@@ -11,7 +11,7 @@ public class TurretController : MonoBehaviour {
     private float nextFire = 0.5f;
     private GameObject newtankShell;
     private float myTime = 0.0f;
-
+    
 
 
     // Use this for initialization
@@ -31,6 +31,9 @@ public class TurretController : MonoBehaviour {
             newtankShell = Instantiate(tankShell, spawnPoint.position, this.transform.rotation) as GameObject;
 
             // create code here that animates the newProjectile
+
+
+
             Destroy(newtankShell, destroyTime);
 
 
