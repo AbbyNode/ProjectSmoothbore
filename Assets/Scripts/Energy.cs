@@ -1,36 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Energy : MonoBehaviour {
 	public float maxEnergy = 100;
 	public float currentEnergy;
 
-	public Slider energybar;
-
 	private EnergyTweaks tweaks;
 	private EventManager em;
+    private UnityEvent increaseEnergyEvent;
 
 	private void Start() {
 		em = this.GetComponent<EventManager>();
 
 		currentEnergy = 0;
 
-		energybar.value = calculateEnergy();
+        increaseEnergyEvent = em.GetEvent("increaseEnergy");
 
-		em.GetEvent("move").AddListener(() => addEnergy(tweaks.move));
-		em.GetEvent("breakCrate").AddListener(() => addEnergy(tweaks.breakCrate));
-		em.GetEvent("hitPlayer").AddListener(() => addEnergy(tweaks.hitPlayer));
-		em.GetEvent("killPlayer").AddListener(() => addEnergy(tweaks.killPlayer));
+		em.GetEvent("move").AddListener(() => increaseEnergy(tweaks.move));
+		em.GetEvent("breakCrate").AddListener(() => increaseEnergy(tweaks.breakCrate));
+		em.GetEvent("hitPlayer").AddListener(() => increaseEnergy(tweaks.hitPlayer));
+		em.GetEvent("killPlayer").AddListener(() => increaseEnergy(tweaks.killPlayer));
 	}
 	
-	private float calculateEnergy() {
+	public float getEnergyPercent() {
 		return currentEnergy / maxEnergy;
 	}
 	
-	public void addEnergy(float amt) {
+	private void increaseEnergy(float amt) {
 		currentEnergy += amt;
-		energybar.value = calculateEnergy();
+        increaseEnergyEvent.Invoke();
 	}
 }
