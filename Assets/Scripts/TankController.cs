@@ -63,7 +63,6 @@ public class TankController : MonoBehaviour
                 float moveAmt = Time.deltaTime * maxSpeed; // Usual move amt
                 moveAmt *= ((180 - Mathf.Abs(angleDiff)) / 180); // Reduce if facing away
                 transform.position += transform.right * moveAmt;
-                Debug.Log("moving");
             }
         }
     }
