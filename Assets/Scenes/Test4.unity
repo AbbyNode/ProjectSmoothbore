@@ -193,6 +193,16 @@ Prefab:
       propertyPath: maxSpeed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 212250509308175814, guid: 7642b0dc15e92ae4f983c2a9d436297b,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212220778049600560, guid: 7642b0dc15e92ae4f983c2a9d436297b,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7642b0dc15e92ae4f983c2a9d436297b, type: 2}
   m_IsPrefabParent: 0
@@ -253,7 +263,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 199db91b07c2a5045b21a28bfc9b67ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -448,6 +458,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114847073236516916, guid: 3f2e4098bc6ba434e95bb257349384db,
+        type: 2}
+      propertyPath: tank
+      value: 
+      objectReference: {fileID: 1006158799}
+    - target: {fileID: 114853627420153892, guid: 3f2e4098bc6ba434e95bb257349384db,
+        type: 2}
+      propertyPath: tank
+      value: 
+      objectReference: {fileID: 1184639068}
+    - target: {fileID: 114404138236054026, guid: 3f2e4098bc6ba434e95bb257349384db,
+        type: 2}
+      propertyPath: tank
+      value: 
+      objectReference: {fileID: 241285199}
+    - target: {fileID: 114777151363959150, guid: 3f2e4098bc6ba434e95bb257349384db,
+        type: 2}
+      propertyPath: tank
+      value: 
+      objectReference: {fileID: 845260804}
     - target: {fileID: 114218229650223570, guid: 3f2e4098bc6ba434e95bb257349384db,
         type: 2}
       propertyPath: player
