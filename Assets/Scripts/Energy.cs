@@ -9,6 +9,7 @@ public class Energy : MonoBehaviour {
 
 	public Slider energybar;
 
+	private EnergyTweaks tweaks;
 	private EventManager em;
 
 	private void Start() {
@@ -18,10 +19,10 @@ public class Energy : MonoBehaviour {
 
 		energybar.value = calculateEnergy();
 
-		em.GetEvent("move").AddListener(() => addEnergy(1));
-		em.GetEvent("break_crate").AddListener(() => addEnergy(1));
-		em.GetEvent("dmg_player").AddListener(() => addEnergy(1));
-		em.GetEvent("kill_player").AddListener(() => addEnergy(1));
+		em.GetEvent("move").AddListener(() => addEnergy(tweaks.move));
+		em.GetEvent("breakCrate").AddListener(() => addEnergy(tweaks.breakCrate));
+		em.GetEvent("hitPlayer").AddListener(() => addEnergy(tweaks.hitPlayer));
+		em.GetEvent("killPlayer").AddListener(() => addEnergy(tweaks.killPlayer));
 	}
 	
 	private float calculateEnergy() {
