@@ -20,3 +20,13 @@ public class EventManager : MonoBehaviour {
 		return e;
 	}
 }
+
+/* ===============================
+ * Known Event Names
+ * 
+ * move				Player moves
+ * energyChanged	Player's energy increases or decrease
+ * breakCrate		Player breaks a crate
+ * hitPlayer		Player hits another player
+ * killPlayer		Player hits another player, resulting in a kill
+ * =============================== */
