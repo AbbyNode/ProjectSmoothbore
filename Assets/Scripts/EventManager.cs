@@ -16,7 +16,7 @@ public class EventManager : MonoBehaviour {
 			e = new UnityEvent();
 			_events.Add(name, e);
 		}
-		
+
 		return e;
 	}
 }

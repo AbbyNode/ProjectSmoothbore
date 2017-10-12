@@ -4,20 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnergySlider : MonoBehaviour {
+	private Slider slider;
+	private Energy tankEnergy;
 
-    public GameObject tank;
+	void Start() {
+		EventManager em = GlobalManager.GetPlayerEventManager(this.transform);
+		em.GetEvent("energyChanges").AddListener(energyChanged);
 
-    private Slider slider;
-    private Energy tankEnergy;
+		tankEnergy = GlobalManager.GetPlayerEnergy(this.transform);
 
-    void Start () {
-        slider = this.GetComponent<Slider>();
-        tank.GetComponent<EventManager>().GetEvent("increaseEnergy").AddListener(increaseEnergy);
-        tankEnergy = tank.GetComponent<Energy>();
+		slider = this.GetComponent<Slider>();
 	}
 
-    private void increaseEnergy()
-    {
-        slider.value = tankEnergy.getEnergyPercent();
-    }
+	private void energyChanged() {
+		slider.value = tankEnergy.getEnergyPercent();
+	}
 }

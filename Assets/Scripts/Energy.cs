@@ -6,31 +6,31 @@ using UnityEngine.UI;
 
 public class Energy : MonoBehaviour {
 	public float maxEnergy = 100;
-	public float currentEnergy;
 
-	private EnergyTweaks tweaks;
-	private EventManager em;
-    private UnityEvent increaseEnergyEvent;
+	private UnityEvent energyChangedEvent;
+
+	private float currentEnergy;
 
 	private void Start() {
-		em = this.GetComponent<EventManager>();
+		EventManager em = GlobalManager.GetPlayerEventManager(this.transform);
+		EnergyTweaks tweaks = BalanceTweaks.globalInstance.energy;
 
 		currentEnergy = 0;
 
-        increaseEnergyEvent = em.GetEvent("increaseEnergy");
+		energyChangedEvent = em.GetEvent("energyChanged");
 
 		em.GetEvent("move").AddListener(() => increaseEnergy(tweaks.move));
 		em.GetEvent("breakCrate").AddListener(() => increaseEnergy(tweaks.breakCrate));
 		em.GetEvent("hitPlayer").AddListener(() => increaseEnergy(tweaks.hitPlayer));
 		em.GetEvent("killPlayer").AddListener(() => increaseEnergy(tweaks.killPlayer));
 	}
-	
+
 	public float getEnergyPercent() {
 		return currentEnergy / maxEnergy;
 	}
-	
+
 	private void increaseEnergy(float amt) {
 		currentEnergy += amt;
-        increaseEnergyEvent.Invoke();
+		energyChangedEvent.Invoke();
 	}
 }
