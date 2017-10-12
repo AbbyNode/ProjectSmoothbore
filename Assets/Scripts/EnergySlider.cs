@@ -9,7 +9,7 @@ public class EnergySlider : MonoBehaviour {
 
 	void Start() {
 		EventManager em = GlobalManager.GetPlayerEventManager(this.transform);
-		em.GetEvent("energyChanges").AddListener(energyChanged);
+		em.GetEvent("energyChanged").AddListener(energyChanged);
 
 		tankEnergy = GlobalManager.GetPlayerEnergy(this.transform);
 

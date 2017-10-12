@@ -147,18 +147,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224818090868407886, guid: 2cfc3867593f2e0448fb24d936b84ed1,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1269615150934180, guid: 2cfc3867593f2e0448fb24d936b84ed1, type: 2}
       propertyPath: m_Name
       value: Player0
       objectReference: {fileID: 0}
-    - target: {fileID: 114828694529158776, guid: 2cfc3867593f2e0448fb24d936b84ed1,
+    - target: {fileID: 224818090868407886, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
-      propertyPath: controllerNumber
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -194,7 +189,7 @@ MonoBehaviour:
   health:
     player: 10
   energy:
-    move: 0.1
+    move: 5
     breakCrate: 1
     hitPlayer: 2
     killPlayer: 10
@@ -389,7 +384,7 @@ Prefab:
     - target: {fileID: 224818090868407886, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20295115486137288, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
@@ -450,7 +445,7 @@ Prefab:
     - target: {fileID: 224818090868407886, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114828694529158776, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}

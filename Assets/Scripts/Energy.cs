@@ -5,16 +5,16 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Energy : MonoBehaviour {
-	public float maxEnergy = 100;
-
 	private UnityEvent energyChangedEvent;
 
+	private float maxEnergy;
 	private float currentEnergy;
 
 	private void Start() {
 		EventManager em = GlobalManager.GetPlayerEventManager(this.transform);
 		EnergyTweaks tweaks = BalanceTweaks.globalInstance.energy;
 
+		maxEnergy = tweaks.maxEnergy;
 		currentEnergy = 0;
 
 		energyChangedEvent = em.GetEvent("energyChanged");

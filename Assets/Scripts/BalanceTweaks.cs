@@ -9,6 +9,8 @@ public class HealthTweaks {
 
 [System.Serializable]
 public class EnergyTweaks {
+	public float maxEnergy = 100;
+
 	public float move = 0.1f;
 	public float breakCrate = 1;
 	public float hitPlayer = 2;
