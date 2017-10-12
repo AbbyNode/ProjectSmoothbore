@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class TankController : MonoBehaviour
 {
-    public float maxSpeed = 2; // Units per second
-    public float rotationSpeed = 360; // Degrees per second
+    public float maxSpeed = 8; // Units per second
+    public float rotationSpeed = 180; // Degrees per second
     public int controllerNumber;
 
 	private UnityEvent moveEvent;
@@ -14,7 +14,7 @@ public class TankController : MonoBehaviour
 	private EventManager em;
 
 	void Start() {
-		em = this.GetComponent<EventManager>();
+		em = GlobalManager.GetPlayerEventManager(this.transform);
 
 		moveEvent = em.GetEvent("move");
 	}
