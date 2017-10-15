@@ -15,18 +15,12 @@ public class tankShellController : MonoBehaviour {
         rbody = this.GetComponent<Rigidbody2D>();
 
 
-        em = this.GetComponent<EventManager>();       
-        dmg_playerEvent = em.GetEvent("hitPlayer");
     }
 	
 	// Update is called once per frame
 	void Update () {
         rbody.velocity = this.transform.right * shellSpeed;
 	}
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Hit");
-       dmg_playerEvent.Invoke();
-    }
+
    
 }
