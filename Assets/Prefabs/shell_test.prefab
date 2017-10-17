@@ -21,9 +21,8 @@ GameObject:
   - component: {fileID: 4634073965858114}
   - component: {fileID: 212294953222700118}
   - component: {fileID: 50216233975694038}
-  - component: {fileID: 114333801493087474}
   - component: {fileID: 61522413073466090}
-  - component: {fileID: 114519888743712368}
+  - component: {fileID: 114333801493087474}
   m_Layer: 0
   m_Name: shell_test
   m_TagString: Untagged
@@ -101,17 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellSpeed: 50
---- !u!114 &114519888743712368
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1047042589501386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675c1bff3869cec45ae292f8c643df1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212294953222700118
 SpriteRenderer:
   m_ObjectHideFlags: 1
