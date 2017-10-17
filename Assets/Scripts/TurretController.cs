@@ -8,6 +8,7 @@ public class TurretController : MonoBehaviour {
 	public float fireDelta = 0.5f;
 	public float shellSpeed = 5.0f;
 	public float destroyTime = 2.0f;
+    public int controllerNumber;
 
 	private float nextFire = 0.5f;
 	private GameObject newtankShell;
@@ -16,7 +17,7 @@ public class TurretController : MonoBehaviour {
 	void Update() {
 		myTime = myTime + Time.deltaTime;
 
-		if (Input.GetButton("Fire1") && myTime > nextFire) {
+		if (Input.GetButton("P" + controllerNumber +"Fire") && myTime > nextFire) {
 			nextFire = myTime + fireDelta;
 
 			GameObject player = GlobalManager.FindParentPlayer(this.transform);
