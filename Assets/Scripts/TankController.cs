@@ -22,6 +22,7 @@ public class TankController : MonoBehaviour {
 
 	void FixedUpdate() {
 		rb.velocity = Vector3.zero;
+		rb.angularVelocity = 0;
 
 		Vector2 inputMove = Vector2.zero;
 		inputMove.x = Input.GetAxis("Horizontal" + controllerNumber);
@@ -62,7 +63,11 @@ public class TankController : MonoBehaviour {
 			if (Input.GetAxisRaw("Anchor") == 0) { // Not anchored
 				float moveAmt = Time.deltaTime * maxSpeed; // Usual move amt
 				moveAmt *= ((180 - Mathf.Abs(angleDiff)) / 180); // Reduce if facing away
-				transform.position += transform.right * moveAmt;
+
+				Vector3 moveVec3 = transform.right * moveAmt;
+				Vector2 moveVec2 = rb.position + (new Vector2(moveVec3.x, moveVec3.y));
+				rb.MovePosition(moveVec2);
+				
 				moveEvent.Invoke();
 			}
 		}
