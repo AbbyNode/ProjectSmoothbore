@@ -14,7 +14,7 @@ public class TankController : MonoBehaviour {
 	private Rigidbody2D rb;
 
 	void Start() {
-		em = GlobalManager.GetPlayerEventManager(this.transform);
+		em = GlobalManager.FindPlayerEventManager(this.transform);
 		moveEvent = em.GetEvent("move");
 
 		rb = this.GetComponent<Rigidbody2D>();

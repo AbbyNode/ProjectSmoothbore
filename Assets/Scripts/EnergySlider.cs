@@ -8,10 +8,12 @@ public class EnergySlider : MonoBehaviour {
 	private Energy tankEnergy;
 
 	void Start() {
-		EventManager em = GlobalManager.GetPlayerEventManager(this.transform);
+		GameObject player = GlobalManager.FindParentPlayer(this.transform);
+
+		EventManager em = player.GetComponent<EventManager>();
 		em.GetEvent("energyChanged").AddListener(energyChanged);
 
-		tankEnergy = GlobalManager.GetPlayerEnergy(this.transform);
+		tankEnergy = player.GetComponent<Energy>();
 
 		slider = this.GetComponent<Slider>();
 	}

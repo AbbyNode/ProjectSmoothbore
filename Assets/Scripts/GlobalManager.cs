@@ -3,12 +3,12 @@ using UnityEngine;
 
 public static class GlobalManager {
 
-	public static EventManager GetPlayerEventManager(Transform childTransform) {
-		return GetPlayerComponent<EventManager>(childTransform) as EventManager;
+	public static EventManager FindPlayerEventManager(Transform childTransform) {
+		return FindPlayerComponent<EventManager>(childTransform) as EventManager;
 	}
 
-	public static Energy GetPlayerEnergy(Transform childTransform) {
-		return GetPlayerComponent<Energy>(childTransform) as Energy;
+	public static Energy FindPlayerEnergy(Transform childTransform) {
+		return FindPlayerComponent<Energy>(childTransform) as Energy;
 	}
 
 	/// <summary>
@@ -17,10 +17,10 @@ public static class GlobalManager {
 	/// <typeparam name="ComponentType"></typeparam>
 	/// <param name="transform"></param>
 	/// <returns></returns>
-	public static ComponentType GetPlayerComponent<ComponentType>(Transform transform) {
+	public static ComponentType FindPlayerComponent<ComponentType>(Transform transform) {
 		GameObject player = (transform.tag == "Player"
 			? transform.gameObject
-			: FindParentWithTag(transform, "Player"));
+			: FindParentPlayer(transform));
 
 		if (player == null) {
 			Debug.LogError("Could not find Player in hierarchy of " + transform.name);
@@ -33,6 +33,15 @@ public static class GlobalManager {
 		}
 
 		return c;
+	}
+
+	/// <summary>
+	/// Finds the closest parent (including self) with the "Player" tag.
+	/// </summary>
+	/// <param name="childTransform"></param>
+	/// <returns></returns>
+	public static GameObject FindParentPlayer(Transform childTransform) {
+		return FindParentWithTag(childTransform, "Player");
 	}
 
 	public static GameObject FindParentWithTag(Transform childTransform, string tag) {

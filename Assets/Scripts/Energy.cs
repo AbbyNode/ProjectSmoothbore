@@ -11,7 +11,7 @@ public class Energy : MonoBehaviour {
 	private float currentEnergy;
 
 	private void Start() {
-		EventManager em = GlobalManager.GetPlayerEventManager(this.transform);
+		EventManager em = GlobalManager.FindPlayerEventManager(this.transform);
 		EnergyTweaks tweaks = BalanceTweaks.globalInstance.energy;
 
 		maxEnergy = tweaks.maxEnergy;
@@ -26,7 +26,7 @@ public class Energy : MonoBehaviour {
 	}
 
 	public float getEnergyPercent() {
-		return currentEnergy / maxEnergy;
+		return currentEnergy / maxEnergy * 100;
 	}
 
 	private void increaseEnergy(float amt) {

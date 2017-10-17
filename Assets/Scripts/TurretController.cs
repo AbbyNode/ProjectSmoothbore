@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour {
 	public GameObject tankShell;
-	public float fireDelta = 0.5f;
 	public Transform spawnPoint;
+	public float fireDelta = 0.5f;
 	public float shellSpeed = 5.0f;
 	public float destroyTime = 2.0f;
 
@@ -19,13 +19,10 @@ public class TurretController : MonoBehaviour {
 		if (Input.GetButton("Fire1") && myTime > nextFire) {
 			nextFire = myTime + fireDelta;
 
-			newtankShell = Instantiate(tankShell, spawnPoint.position, this.transform.rotation);
+			GameObject player = GlobalManager.FindParentPlayer(this.transform);
+			newtankShell = Instantiate(tankShell, spawnPoint.position, this.transform.rotation, player.transform);
 
 			newtankShell.GetComponent<Rigidbody2D>().velocity = this.transform.right * shellSpeed;
-
-			// create code here that animates the newProjectile
-
-			// Destroy(newtankShell, destroyTime);
 
 			nextFire = nextFire - myTime;
 			myTime = 0.0F;

@@ -4,27 +4,22 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class ShellController : MonoBehaviour {
-	public float shellSpeed = 5.0f;
-
-	private Rigidbody2D rbody;
-
+	private GameObject thisPlayer;
 	private EventManager em;
-	private UnityEvent hitEvent;
+	private UnityEvent hitPlayerEvent;
 
 	void Start() {
-		// em = GlobalManager.GetPlayerEventManager(this.transform);
-
-		// hitEvent = em.GetEvent("hitPlayer");
-
-		rbody = this.GetComponent<Rigidbody2D>();
+		thisPlayer = GlobalManager.FindParentPlayer(this.transform);
+		em = thisPlayer.GetComponent<EventManager>();
+		hitPlayerEvent = em.GetEvent("hitPlayer");
 	}
 
-	void Update() {
-		rbody.velocity = this.transform.right * shellSpeed;
-	}
-	
 	void OnCollisionEnter2D(Collision2D coll) {
-		Destroy(this);
-		// hitEvent.Invoke();
+		Destroy(this.gameObject);
+
+		GameObject collPlayer = GlobalManager.FindParentPlayer(coll.transform);
+		if (collPlayer != null && collPlayer != thisPlayer) {
+			hitPlayerEvent.Invoke();
+		}
 	}
 }
