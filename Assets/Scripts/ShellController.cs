@@ -12,9 +12,9 @@ public class ShellController : MonoBehaviour {
 	private UnityEvent hitEvent;
 
 	void Start() {
-		em = GlobalManager.GetPlayerEventManager(this.transform);
+		// em = GlobalManager.GetPlayerEventManager(this.transform);
 
-		hitEvent = em.GetEvent("hitPlayer");
+		// hitEvent = em.GetEvent("hitPlayer");
 
 		rbody = this.GetComponent<Rigidbody2D>();
 	}
@@ -25,6 +25,6 @@ public class ShellController : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D coll) {
 		Destroy(this);
-		hitEvent.Invoke();
+		// hitEvent.Invoke();
 	}
 }

@@ -6,6 +6,7 @@ public class TurretController : MonoBehaviour {
 	public GameObject tankShell;
 	public float fireDelta = 0.5f;
 	public Transform spawnPoint;
+	public float shellSpeed = 5.0f;
 	public float destroyTime = 2.0f;
 
 	private float nextFire = 0.5f;
@@ -19,6 +20,8 @@ public class TurretController : MonoBehaviour {
 			nextFire = myTime + fireDelta;
 
 			newtankShell = Instantiate(tankShell, spawnPoint.position, this.transform.rotation);
+
+			newtankShell.GetComponent<Rigidbody2D>().velocity = this.transform.right * shellSpeed;
 
 			// create code here that animates the newProjectile
 
