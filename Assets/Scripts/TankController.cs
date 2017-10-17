@@ -13,11 +13,16 @@ public class TankController : MonoBehaviour {
 
 	private Rigidbody2D rb;
 
+    private string hMove;
+    private string vMove;
+
 	void Start() {
 		em = GlobalManager.FindPlayerEventManager(this.transform);
 		moveEvent = em.GetEvent("move");
+        hMove = "P" + controllerNumber + "Horizontal";
+        vMove = "P" + controllerNumber + "Vertical";
 
-		rb = this.GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>();
 	}
 
 	void FixedUpdate() {
@@ -25,8 +30,8 @@ public class TankController : MonoBehaviour {
 		rb.angularVelocity = 0;
 
 		Vector2 inputMove = Vector2.zero;
-		inputMove.x = Input.GetAxis("Horizontal" + controllerNumber);
-		inputMove.y = Input.GetAxis("Vertical" + controllerNumber);
+		inputMove.x = Input.GetAxis(hMove);
+		inputMove.y = Input.GetAxis(vMove);
 
 		if (inputMove != Vector2.zero) {
 			// Input angle, clamped between 0 and 360
