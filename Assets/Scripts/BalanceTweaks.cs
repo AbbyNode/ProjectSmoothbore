@@ -17,6 +17,13 @@ public class EnergyTweaks {
 	public float killPlayer = 10;
 }
 
+[System.Serializable]
+public class ModuleCostTweaks {
+	public float basicGun = 10;
+	public float ricochetGun = 20;
+	public float rocketGun = 30;
+}
+
 public class BalanceTweaks : MonoBehaviour {
 	private static BalanceTweaks _globalInstance;
 
