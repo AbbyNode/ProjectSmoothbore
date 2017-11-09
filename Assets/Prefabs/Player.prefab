@@ -494,10 +494,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankShell: {fileID: 1047042589501386, guid: 2695dff56abb7bd43a727ca9a745a308, type: 2}
-  fireDelta: 0.5
   spawnPoint: {fileID: 4540075380178394}
+  fireDelta: 0.5
   shellSpeed: 50
   destroyTime: 2
+  controllerNumber: 0
 --- !u!114 &114808707748375416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -798,7 +799,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1340778194653010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -155, z: 182.25}
+  m_LocalPosition: {x: 0, y: -218, z: 182.25}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 224487134611925858}
@@ -808,7 +809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -155}
+  m_AnchoredPosition: {x: 0, y: -218}
   m_SizeDelta: {x: 443.16, y: 110.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224818090868407886
