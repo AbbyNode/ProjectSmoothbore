@@ -19,6 +19,6 @@ public class EnergySlider : MonoBehaviour {
 	}
 
 	private void energyChanged() {
-		slider.value = tankEnergy.getEnergyPercent();
+		slider.value = tankEnergy.EnergyPercent;
 	}
 }

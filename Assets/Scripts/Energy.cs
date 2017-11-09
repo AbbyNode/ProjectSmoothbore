@@ -10,6 +10,18 @@ public class Energy : MonoBehaviour {
 	private float maxEnergy;
 	private float currentEnergy;
 
+	public float EnergyValue {
+		get {
+			return currentEnergy;
+		}
+	}
+
+	public float EnergyPercent {
+		get {
+			return currentEnergy / maxEnergy * 100;
+		}
+	}
+
 	private void Start() {
 		EventManager em = GlobalManager.FindPlayerEventManager(this.transform);
 		EnergyTweaks tweaks = BalanceTweaks.globalInstance.energy;
@@ -19,17 +31,13 @@ public class Energy : MonoBehaviour {
 
 		energyChangedEvent = em.GetEvent("energyChanged");
 
-		em.GetEvent("move").AddListener(() => increaseEnergy(tweaks.move));
-		em.GetEvent("breakCrate").AddListener(() => increaseEnergy(tweaks.breakCrate));
-		em.GetEvent("hitPlayer").AddListener(() => increaseEnergy(tweaks.hitPlayer));
-		em.GetEvent("killPlayer").AddListener(() => increaseEnergy(tweaks.killPlayer));
+		em.GetEvent("move").AddListener(() => IncreaseEnergy(tweaks.move));
+		em.GetEvent("breakCrate").AddListener(() => IncreaseEnergy(tweaks.breakCrate));
+		em.GetEvent("hitPlayer").AddListener(() => IncreaseEnergy(tweaks.hitPlayer));
+		em.GetEvent("killPlayer").AddListener(() => IncreaseEnergy(tweaks.killPlayer));
 	}
 
-	public float getEnergyPercent() {
-		return currentEnergy / maxEnergy * 100;
-	}
-
-	private void increaseEnergy(float amt) {
+	private void IncreaseEnergy(float amt) {
 		currentEnergy += amt;
 		energyChangedEvent.Invoke();
 	}
