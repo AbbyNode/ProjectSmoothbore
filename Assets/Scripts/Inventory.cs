@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour {
 	private InventoryItem[] items;
 	private int selectedIndex;
 
+
 	void Start() {
 		items = new InventoryItem[8];
 	}
