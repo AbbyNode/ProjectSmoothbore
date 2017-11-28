@@ -4,20 +4,24 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class ShellController : MonoBehaviour {
+	public PlayerManager playerM;
+
 	private GameObject thisPlayer;
-	private EventManager em;
+
+	private EventManager eventM;
 	private UnityEvent hitPlayerEvent;
 
 	void Start() {
-		thisPlayer = GlobalManager.FindParentPlayer(this.transform);
-		em = thisPlayer.GetComponent<EventManager>();
-		hitPlayerEvent = em.GetEvent("hitPlayer");
+		thisPlayer = playerM.gameObject;
+
+		eventM = playerM.eventManager;
+		hitPlayerEvent = eventM.GetEvent("hitPlayer");
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		Destroy(this.gameObject);
 
-		GameObject collPlayer = GlobalManager.FindParentPlayer(coll.transform);
+		GameObject collPlayer = playerM.gameObject;
 		if (collPlayer != null && collPlayer != thisPlayer) {
 			hitPlayerEvent.Invoke();
 		}

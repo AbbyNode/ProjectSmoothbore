@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour {
+	public PlayerManager playerM;
+
 	private Energy energy;
 
 	private InventoryItem[] items;
 	private int selectedIndex;
 
 	void Start() {
-		energy = GlobalManager.FindPlayerEnergy(this.transform);
+		energy = playerM.energy;
 
 		items = new InventoryItem[8];
 	}
@@ -30,7 +32,7 @@ public class Inventory : MonoBehaviour {
 		} else if (energy.EnergyValue >= 100) {
 			Debug.Log("Has 100");
 		}
-		
+
 		for (int i = 0; i < items.Length; i++) {
 			if (items[i] == null) {
 				items[i] = item;

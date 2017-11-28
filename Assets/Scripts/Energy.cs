@@ -5,6 +5,8 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Energy : MonoBehaviour {
+	public PlayerManager playerM;
+
 	private UnityEvent energyChangedEvent;
 
 	private float maxEnergy;
@@ -23,18 +25,18 @@ public class Energy : MonoBehaviour {
 	}
 
 	private void Start() {
-		EventManager em = GlobalManager.FindPlayerEventManager(this.transform);
+		EventManager eventM = playerM.eventManager;
 		EnergyTweaks tweaks = BalanceTweaks.globalInstance.energy;
 
 		maxEnergy = tweaks.maxEnergy;
 		currentEnergy = 0;
 
-		energyChangedEvent = em.GetEvent("energyChanged");
+		energyChangedEvent = eventM.GetEvent("energyChanged");
 
-		em.GetEvent("move").AddListener(() => IncreaseEnergy(tweaks.move));
-		em.GetEvent("breakCrate").AddListener(() => IncreaseEnergy(tweaks.breakCrate));
-		em.GetEvent("hitPlayer").AddListener(() => IncreaseEnergy(tweaks.hitPlayer));
-		em.GetEvent("killPlayer").AddListener(() => IncreaseEnergy(tweaks.killPlayer));
+		eventM.GetEvent("move").AddListener(() => IncreaseEnergy(tweaks.move));
+		eventM.GetEvent("breakCrate").AddListener(() => IncreaseEnergy(tweaks.breakCrate));
+		eventM.GetEvent("hitPlayer").AddListener(() => IncreaseEnergy(tweaks.hitPlayer));
+		eventM.GetEvent("killPlayer").AddListener(() => IncreaseEnergy(tweaks.killPlayer));
 	}
 
 	private void IncreaseEnergy(float amt) {

@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
-{
-    //Public variable to store a reference to the player game object
-    public GameObject player;
+public class CameraController : MonoBehaviour {
+	public PlayerManager playerM;
 
-    // Use this for initialization
-    void Start()
-    {
-    }
+	private Transform tankT;
 
-    // LateUpdate is called after Update each frame
-    void LateUpdate()
-    {
-        // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
-    }
+	void Start() {
+		tankT = playerM.tank.transform;
+
+		this.GetComponent<Camera>().rect = new Rect((playerM.playerNum % 2 == 0 ? 0f : 0.5f), (playerM.playerNum <= 1 ? 0.5f : 0f), 0.5f, 0.5f);
+	}
+
+	private void Update() {
+		transform.position = new Vector3(tankT.position.x, tankT.position.y, transform.position.z);
+	}
 }

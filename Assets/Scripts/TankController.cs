@@ -4,38 +4,35 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class TankController : MonoBehaviour {
+	public PlayerManager playerM;
+
 	public float maxSpeed = 8; // Units per second
 	public float rotationSpeed = 180; // Degrees per second
-	public int controllerNumber;
 
-	private EventManager em;
+	private EventManager eventM;
 	private UnityEvent moveEvent;
 
 	private Rigidbody2D rb;
 
-    private string hMove;
-    private string vMove;
+	public bool IsAnchored { get; set; }
+	public Vector2 MoveInput { get; set; }
 
 	void Start() {
-		em = GlobalManager.FindPlayerEventManager(this.transform);
-		moveEvent = em.GetEvent("move");
-        hMove = "P" + controllerNumber + "Horizontal";
-        vMove = "P" + controllerNumber + "Vertical";
+		eventM = playerM.eventManager;
+		moveEvent = eventM.GetEvent("move");
 
-        rb = this.GetComponent<Rigidbody2D>();
+		MoveInput = Vector2.zero;
+
+		rb = this.GetComponent<Rigidbody2D>();
 	}
 
 	void FixedUpdate() {
 		rb.velocity = Vector3.zero;
 		rb.angularVelocity = 0;
 
-		Vector2 inputMove = Vector2.zero;
-		inputMove.x = Input.GetAxis(hMove);
-		inputMove.y = Input.GetAxis(vMove);
-
-		if (inputMove != Vector2.zero) {
+		if (MoveInput != Vector2.zero) {
 			// Input angle, clamped between 0 and 360
-			float inputAngle = (Mathf.Atan2(inputMove.y, inputMove.x) * Mathf.Rad2Deg);
+			float inputAngle = (Mathf.Atan2(MoveInput.y, MoveInput.x) * Mathf.Rad2Deg);
 			while (inputAngle < 0) {
 				inputAngle += 360;
 			}
@@ -65,16 +62,19 @@ public class TankController : MonoBehaviour {
 			}
 
 			// Move
-			if (Input.GetAxisRaw("Anchor") == 0) { // Not anchored
+			if (!IsAnchored) { // Not anchored
 				float moveAmt = Time.deltaTime * maxSpeed; // Usual move amt
 				moveAmt *= ((180 - Mathf.Abs(angleDiff)) / 180); // Reduce if facing away
 
 				Vector3 moveVec3 = transform.right * moveAmt;
 				Vector2 moveVec2 = rb.position + (new Vector2(moveVec3.x, moveVec3.y));
 				rb.MovePosition(moveVec2);
-				
+
 				moveEvent.Invoke();
 			}
+
+			// Reset vector for next time
+			MoveInput = Vector2.zero;
 		}
 	}
 }

@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnergySlider : MonoBehaviour {
+	public PlayerManager playerM;
+
 	private Slider slider;
 	private Energy tankEnergy;
 
 	void Start() {
-		GameObject player = GlobalManager.FindParentPlayer(this.transform);
+		EventManager eventM = playerM.eventManager;
+		eventM.GetEvent("energyChanged").AddListener(energyChanged);
 
-		EventManager em = player.GetComponent<EventManager>();
-		em.GetEvent("energyChanged").AddListener(energyChanged);
-
-		tankEnergy = player.GetComponent<Energy>();
+		tankEnergy = playerM.energy;
 
 		slider = this.GetComponent<Slider>();
 	}
