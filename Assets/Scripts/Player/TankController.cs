@@ -11,6 +11,7 @@ public class TankController : MonoBehaviour {
 
 	private EventManager eventM;
 	private UnityEventFloat moveEvent;
+    private UnityEventFloat deathEvent;
 
 	private Rigidbody2D rb;
 
@@ -20,6 +21,7 @@ public class TankController : MonoBehaviour {
 	void Start() {
 		eventM = playerM.eventManager;
 		moveEvent = eventM.GetEvent("move");
+        deathEvent = eventM.GetEvent("PlayerDeath");
 
 		MoveInput = Vector2.zero;
 
@@ -93,6 +95,7 @@ public class TankController : MonoBehaviour {
             {
                 Destroy(this.gameObject);
                 endScreen.text = "You Lose!";
+                deathEvent.Invoke(0);
             }
         }
       

@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     void DeathCount(float f)
     {
         deathCounter += 1;
-
+        Debug.Log("someone died");
         if (deathCounter >= 3)
         {
             SceneManager.LoadScene("WinScene");
