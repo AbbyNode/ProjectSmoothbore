@@ -5,8 +5,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Energy : PlayerStat {
-	private UnityEvent energyChangedEvent;
+public class Energy : MonoBehaviour, PlayerStat {
+	public PlayerManager playerM;
+
+	private UnityEventFloat energyChangedEvent;
 
 	private float maxEnergy;
 	private float currentEnergy;
@@ -20,14 +22,22 @@ public class Energy : PlayerStat {
 
 		energyChangedEvent = eventM.GetEvent("energyChanged");
 
-		eventM.GetEvent("move").AddListener(() => IncreaseEnergy(tweaks.move));
-		eventM.GetEvent("breakCrate").AddListener(() => IncreaseEnergy(tweaks.breakCrate));
-		eventM.GetEvent("hitPlayer").AddListener(() => IncreaseEnergy(tweaks.hitPlayer));
-		eventM.GetEvent("killPlayer").AddListener(() => IncreaseEnergy(tweaks.killPlayer));
+		eventM.GetEvent("move").AddListener((f) => IncreaseEnergy(tweaks.move));
+		eventM.GetEvent("breakCrate").AddListener((f) => IncreaseEnergy(tweaks.breakCrate));
+		eventM.GetEvent("hitPlayer").AddListener((f) => IncreaseEnergy(tweaks.hitPlayer));
+		eventM.GetEvent("killPlayer").AddListener((f) => IncreaseEnergy(tweaks.killPlayer));
 	}
 
 	private void IncreaseEnergy(float amt) {
 		currentEnergy += amt;
-		energyChangedEvent.Invoke();
+		energyChangedEvent.Invoke(currentEnergy);
+	}
+
+	public float getStatValue() {
+		return currentEnergy;
+	}
+
+	public float getStatPercent() {
+		return currentEnergy / maxEnergy * 100;
 	}
 }

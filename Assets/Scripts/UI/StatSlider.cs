@@ -3,28 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StatSlider : MonoBehaviour {
+public abstract class StatSlider : MonoBehaviour {
 	public PlayerManager playerM;
 
-	public string triggerEvent;
+	protected PlayerStat stat;
 
 	private Slider slider;
-	private Energy tankEnergy;
 
 	void Start() {
 		EventManager eventM = playerM.eventManager;
-		eventM.GetEvent(triggerEvent).AddListener(statChanged);
-
-		tankEnergy = playerM.energy;
+		// eventM.GetEvent().AddListener(statChanged);
 
 		slider = this.GetComponent<Slider>();
 	}
 
 	private void statChanged() {
-
-	}
-
-	private void energyChanged() {
-		slider.value = tankEnergy.getStatPercent();
+		if (stat != null) {
+			slider.value = stat.getStatPercent();
+		}
 	}
 }

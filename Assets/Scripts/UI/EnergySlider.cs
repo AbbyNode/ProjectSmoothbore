@@ -18,7 +18,7 @@ public class EnergySlider : MonoBehaviour {
 		slider = this.GetComponent<Slider>();
 	}
 
-	private void energyChanged() {
-		slider.value = tankEnergy.getStatPercent();
+	private void energyChanged(float newEnergy) {
+		slider.value = newEnergy;
 	}
 }

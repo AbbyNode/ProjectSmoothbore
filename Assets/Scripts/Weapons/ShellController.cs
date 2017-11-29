@@ -9,7 +9,7 @@ public class ShellController : MonoBehaviour {
 	private GameObject thisPlayer;
 
 	private EventManager eventM;
-	private UnityEvent hitPlayerEvent;
+	private UnityEventFloat hitPlayerEvent;
 
 	void Start() {
 		thisPlayer = playerM.gameObject;
@@ -25,6 +25,6 @@ public class ShellController : MonoBehaviour {
 		//if (collPlayer != null && collPlayer != thisPlayer) {
 		//	hitPlayerEvent.Invoke();
 		//}       
-        hitPlayerEvent.Invoke();
-    }
+		hitPlayerEvent.Invoke(0);
+	}
 }

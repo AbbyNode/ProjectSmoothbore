@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EventManager : MonoBehaviour {
-	private Dictionary<string, UnityEvent> _events = new Dictionary<string, UnityEvent>();
+public class UnityEventFloat : UnityEvent<float> { }
 
-	public UnityEvent GetEvent(string name) {
-		UnityEvent e;
+public class EventManager : MonoBehaviour {
+	private Dictionary<string, UnityEventFloat> _events = new Dictionary<string, UnityEventFloat>();
+
+	public UnityEventFloat GetEvent(string name) {
+		UnityEventFloat e;
 
 		_events.TryGetValue(name, out e);
 
 		if (e == null) {
-			e = new UnityEvent();
+			e = new UnityEventFloat();
 			_events.Add(name, e);
 		}
 

@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void DeathCount()
+    void DeathCount(float f)
     {
         deathCounter += 1;
 

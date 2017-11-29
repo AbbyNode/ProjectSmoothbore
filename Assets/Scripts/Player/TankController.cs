@@ -10,7 +10,7 @@ public class TankController : MonoBehaviour {
 	public float rotationSpeed = 180; // Degrees per second
 
 	private EventManager eventM;
-	private UnityEvent moveEvent;
+	private UnityEventFloat moveEvent;
 
 	private Rigidbody2D rb;
 
@@ -70,7 +70,7 @@ public class TankController : MonoBehaviour {
 				Vector2 moveVec2 = rb.position + (new Vector2(moveVec3.x, moveVec3.y));
 				rb.MovePosition(moveVec2);
 
-				moveEvent.Invoke();
+				moveEvent.Invoke(0);
 			}
 
 			// Reset vector for next time
