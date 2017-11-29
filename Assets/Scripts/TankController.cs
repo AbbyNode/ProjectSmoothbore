@@ -80,7 +80,9 @@ public class TankController : MonoBehaviour {
     /* ~Temporary~  for first playable*/
 
     public UnityEngine.UI.Slider healthSlider;
-    
+    public UnityEngine.UI.Text endScreen;
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -90,6 +92,7 @@ public class TankController : MonoBehaviour {
             if (healthSlider.value <= 0)
             {
                 Destroy(this.gameObject);
+                endScreen.text = "You Lose!";
             }
         }
       
