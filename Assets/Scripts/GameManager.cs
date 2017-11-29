@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] players;
     private PlayerManager playerM;
-    private int deathCounter = 0;
 
     // Use this for initialization
     void Start()
@@ -17,20 +16,21 @@ public class GameManager : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
         EventManager eventM = playerM.eventManager;
 
-        for (int i = 0; i < players.Length; i++)
-        {
-            if (players[i] == null)
-            {
+        //for (int i = 0; i < players.Length; i++)
+        //{
+        //    if (players[i] == null)
+        //    {
                 eventM.GetEvent("PlayerDeath").AddListener(DeathCount);
-            }
-        }
+        //    }
+        //}
     }
 
     void DeathCount(float f)
     {
-        deathCounter += 1;
+        players = GameObject.FindGameObjectsWithTag("Player");
+
         Debug.Log("someone died");
-        if (deathCounter >= 3)
+        if (players.Length == 1)
         {
             SceneManager.LoadScene("WinScene");
         }
