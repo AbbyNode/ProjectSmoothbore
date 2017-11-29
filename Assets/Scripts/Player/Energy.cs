@@ -1,28 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class Energy : MonoBehaviour {
-	public PlayerManager playerM;
-
+public class Energy : PlayerStat {
 	private UnityEvent energyChangedEvent;
 
 	private float maxEnergy;
 	private float currentEnergy;
-
-	public float EnergyValue {
-		get {
-			return currentEnergy;
-		}
-	}
-
-	public float EnergyPercent {
-		get {
-			return currentEnergy / maxEnergy * 100;
-		}
-	}
 
 	private void Start() {
 		EventManager eventM = playerM.eventManager;
