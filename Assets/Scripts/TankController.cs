@@ -77,4 +77,19 @@ public class TankController : MonoBehaviour {
 			MoveInput = Vector2.zero;
 		}
 	}
+    /* ~Temporary~  for first playable*/
+
+    public UnityEngine.UI.Slider healthSlider;
+    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "BasicShell")
+        {
+      
+            healthSlider.value = healthSlider.value - 5;
+        }
+      
+
+    }
 }

@@ -22,8 +22,10 @@ public class ShellController : MonoBehaviour {
 		Destroy(this.gameObject);
 
 		GameObject collPlayer = playerM.gameObject;
-		if (collPlayer != null && collPlayer != thisPlayer) {
-			hitPlayerEvent.Invoke();
-		}
-	}
+		//if (collPlayer != null && collPlayer != thisPlayer) {
+		//	hitPlayerEvent.Invoke();
+		//}
+        Debug.Log("PUNYETA");
+        hitPlayerEvent.Invoke();
+    }
 }

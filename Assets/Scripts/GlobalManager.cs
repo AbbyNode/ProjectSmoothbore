@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public static class GlobalManager {
-	/*
+   // /*
 	public static EventManager FindPlayerEventManager(Transform childTransform) {
 		return FindPlayerComponent<EventManager>(childTransform) as EventManager;
 	}
@@ -34,8 +34,8 @@ public static class GlobalManager {
 
 		return c;
 	}
-	*/
-	/*
+	//*/
+   // /*
 	/// <summary>
 	/// Finds the closest parent (including self) with the "Player" tag.
 	/// </summary>
@@ -57,7 +57,7 @@ public static class GlobalManager {
 
 		return null;
 	}
-	*/
+	//*/
 }
 
 // http://answers.unity3d.com/questions/28581/traverse-up-the-hierarchy-to-find-first-parent-wit.html?childToView=990572#answer-990572
