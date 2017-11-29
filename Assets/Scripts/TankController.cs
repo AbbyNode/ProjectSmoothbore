@@ -86,8 +86,11 @@ public class TankController : MonoBehaviour {
     {
         if (collision.gameObject.tag == "BasicShell")
         {
-      
             healthSlider.value = healthSlider.value - 5;
+            if (healthSlider.value <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
       
 
