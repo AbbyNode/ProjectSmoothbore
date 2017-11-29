@@ -2,15 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSlider : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+public class HealthSlider : StatSlider {
+	private void Start() {
+		this.Init(PlayerEvents.HealthChanged);
 	}
 }

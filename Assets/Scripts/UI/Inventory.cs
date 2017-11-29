@@ -27,9 +27,9 @@ public class Inventory : MonoBehaviour {
 	public void GenerateItem() {
 		InventoryItem item = null;
 
-		if (energy.getStatValue() >= 50) {
+		if (energy.GetStatValue() >= 50) {
 			Debug.Log("Has 50");
-		} else if (energy.getStatValue() >= 100) {
+		} else if (energy.GetStatValue() >= 100) {
 			Debug.Log("Has 100");
 		}
 

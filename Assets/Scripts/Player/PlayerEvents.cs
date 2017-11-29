@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class PlayerEvents {
-	public static readonly string Move = "Move";
-	public static readonly string EnergyChanged = "EnergyChanged";
-	public static readonly string BreakCrate = "BreakCrate";
-	public static readonly string HitPlayer = "HitPlayer";
-	public static readonly string KilledPlayer = "KilledPlayer";
-	public static readonly string PlayerDeath = "PlayerDeath";
+public class PlayerEvents {
+	public const string EnergyChanged = "EnergyChanged";
+	public const string HealthChanged = "HealthChanged";
+
+	public const string Move = "Move";
+	public const string BreakCrate = "BreakCrate";
+	public const string HitPlayer = "HitPlayer";
+	public const string KilledPlayer = "KilledPlayer";
+	public const string PlayerDeath = "PlayerDeath";
 }

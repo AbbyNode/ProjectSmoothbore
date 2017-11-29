@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour {
+public class Health : PlayerStat {
+	void Start() {
+		EventManager eventM = playerM.eventManager;
+		HealthTweaks tweaks = BalanceTweaks.globalInstance.health;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		this.Init(eventM.GetEvent(PlayerEvents.HealthChanged), tweaks.player);
 	}
 }
