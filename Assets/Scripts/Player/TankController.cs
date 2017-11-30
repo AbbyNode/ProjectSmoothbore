@@ -11,7 +11,6 @@ public class TankController : MonoBehaviour {
 
 	private EventManager eventM;
 	private UnityEventFloat moveEvent;
-	private UnityEventFloat deathEvent;
 
 	private Rigidbody2D rb;
 
@@ -20,8 +19,7 @@ public class TankController : MonoBehaviour {
 
 	void Start() {
 		eventM = playerM.eventManager;
-		moveEvent = eventM.GetEvent("move");
-		deathEvent = eventM.GetEvent("PlayerDeath");
+		moveEvent = eventM.GetEvent(PlayerEvents.Move);
 
 		MoveInput = Vector2.zero;
 
