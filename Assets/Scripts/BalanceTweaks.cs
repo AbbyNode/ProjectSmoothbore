@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+public class PlayerTweaks {
+	public float maxSpeed = 10;  // Units per second
+	public float rotationSpeed = 180; // Degrees per second
+}
+
+[System.Serializable]
 public class HealthTweaks {
 	public float player = 10;
 }
@@ -41,6 +47,7 @@ public class BalanceTweaks : MonoBehaviour {
 		}
 	}
 
+	public PlayerTweaks player;
 	public HealthTweaks health;
 	public EnergyTweaks energy;
 	public ModuleCostTweaks moduleCosts;
