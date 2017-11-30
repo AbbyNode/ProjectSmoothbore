@@ -7,12 +7,12 @@ public class PlayerEvents {
 	public const string HealthChanged = "HealthChanged";
 
 	public const string WasHit = "WasHit";
-	public const string Died = "Died";
+	public const string WasKilled = "WasKilled";
 
 	public const string Move = "Move";
 
 	public const string BreakCrate = "BreakCrate";
 
-	public const string HitOtherPlayer = "HitOtherPlayer";
-	public const string KilledPlayer = "KilledOtherPlayer";
+	public const string HitEnemy = "HitEnemy";
+	public const string KilledEnemy = "KilledEnemy";
 }

@@ -9,9 +9,9 @@ public class Energy : PlayerStat {
 
 		this.Init(eventM.GetEvent(PlayerEvents.EnergyChanged), tweaks.maxEnergy);
 
-		eventM.GetEvent("move").AddListener((f) => AdjustStatValue(tweaks.move));
-		eventM.GetEvent("breakCrate").AddListener((f) => AdjustStatValue(tweaks.breakCrate));
-		eventM.GetEvent("hitPlayer").AddListener((f) => AdjustStatValue(tweaks.hitPlayer));
-		eventM.GetEvent("killPlayer").AddListener((f) => AdjustStatValue(tweaks.killPlayer));
+		eventM.GetEvent(PlayerEvents.Move).AddListener((f) => AdjustStatValue(tweaks.move));
+		eventM.GetEvent(PlayerEvents.BreakCrate).AddListener((f) => AdjustStatValue(tweaks.breakCrate));
+		eventM.GetEvent(PlayerEvents.HitEnemy).AddListener((f) => AdjustStatValue(tweaks.hitPlayer));
+		eventM.GetEvent(PlayerEvents.KilledEnemy).AddListener((f) => AdjustStatValue(tweaks.killPlayer));
 	}
 }

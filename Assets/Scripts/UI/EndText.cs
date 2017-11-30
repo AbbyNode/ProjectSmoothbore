@@ -12,6 +12,6 @@ public class EndText : MonoBehaviour {
 		this.endText = this.GetComponent<Text>();
 
 		EventManager eventM = playerM.eventManager;
-		eventM.GetEvent(PlayerEvents.Died).AddListener((f) => endText.text = "You lose!");
+		eventM.GetEvent(PlayerEvents.WasKilled).AddListener((f) => endText.text = "You lose!");
 	}
 }

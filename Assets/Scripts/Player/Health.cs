@@ -10,13 +10,13 @@ public class Health : PlayerStat {
 		Init(eventM.GetEvent(PlayerEvents.HealthChanged), tweaks.player);
 		SetStatValue(tweaks.player);
 
-		UnityEventFloat deathEvent = eventM.GetEvent(PlayerEvents.Died);
+		UnityEventFloat wasKilledEvent = eventM.GetEvent(PlayerEvents.WasKilled);
 
 		eventM.GetEvent(PlayerEvents.WasHit).AddListener((damage) => {
 			AdjustStatValue(-damage);
 			if (GetStatValue() <= 0) {
 				Destroy(this.gameObject);
-				deathEvent.Invoke(0);
+				wasKilledEvent.Invoke(0);
 			}
 		});
 	}
