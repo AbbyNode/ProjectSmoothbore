@@ -21,8 +21,9 @@ GameObject:
   - component: {fileID: 224451396347783966}
   - component: {fileID: 222561060833848358}
   - component: {fileID: 114427748492502266}
+  - component: {fileID: 114995435774900300}
   m_Layer: 5
-  m_Name: EndScreen
+  m_Name: EndText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,6 +89,7 @@ GameObject:
   - component: {fileID: 114841219667788100}
   - component: {fileID: 114884458849755572}
   - component: {fileID: 114180144726084096}
+  - component: {fileID: 114202659277852542}
   - component: {fileID: 114123864284796938}
   m_Layer: 0
   m_Name: Player
@@ -224,6 +226,7 @@ GameObject:
   - component: {fileID: 4124247207018116}
   - component: {fileID: 50338965758610738}
   - component: {fileID: 114828694529158776}
+  - component: {fileID: 114335351072335312}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -512,6 +515,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b848f980e48ea64fb44f0002d789e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 114841219667788100}
+--- !u!114 &114202659277852542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1269615150934180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c837b57a9a00f4e932cd88c06c4c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 114841219667788100}
+--- !u!114 &114335351072335312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754448494316448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32c06c55acda484983497751d69d4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 114841219667788100}
@@ -828,8 +855,6 @@ MonoBehaviour:
   playerM: {fileID: 114841219667788100}
   maxSpeed: 8
   rotationSpeed: 180
-  healthSlider: {fileID: 114808707748375416}
-  endScreen: {fileID: 114427748492502266}
 --- !u!114 &114841219667788100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -874,6 +899,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114995435774900300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038952406580438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8ebc9adfbf339448784c1f445c0706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 114841219667788100}
 --- !u!124 &124883588651761638
 Behaviour:
   m_ObjectHideFlags: 1

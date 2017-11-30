@@ -42,6 +42,11 @@ public class PlayerStat : MonoBehaviour {
 			Debug.LogError(NotInitError);
 			return;
 		}
+
+		if (_currentValue != amt) {
+			_currentValue = amt;
+			_changedEvent.Invoke(GetStatPercent());
+		}
 	}
 
 	public float GetStatValue() {

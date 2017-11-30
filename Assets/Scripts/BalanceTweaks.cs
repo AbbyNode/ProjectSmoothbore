@@ -24,10 +24,15 @@ public class ModuleCostTweaks {
 	public float rocketGun = 30;
 }
 
+[System.Serializable]
+public class DamageTweaks {
+	public float basicShell = 1;
+}
+
 public class BalanceTweaks : MonoBehaviour {
 	private static BalanceTweaks _globalInstance;
 
-	public static BalanceTweaks globalInstance {
+	public static BalanceTweaks GlobalInstance {
 		get {
 			if (_globalInstance == null) {
 				Debug.LogError("No BalanceTweaks instance found");
@@ -38,6 +43,8 @@ public class BalanceTweaks : MonoBehaviour {
 
 	public HealthTweaks health;
 	public EnergyTweaks energy;
+	public ModuleCostTweaks moduleCosts;
+	public DamageTweaks damage;
 
 	private void Awake() {
 		if (_globalInstance != null && _globalInstance != this) {
