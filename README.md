@@ -2,7 +2,7 @@
 
 This is a game.
 
-[WebGL](https://abbynode.github.io/ProjectSmoothbore/)
+[Play](https://abbynode.github.io/ProjectSmoothbore/)
 
 Credits:
 Abby
