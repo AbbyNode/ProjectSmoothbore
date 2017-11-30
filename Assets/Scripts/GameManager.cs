@@ -5,30 +5,17 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
+	public List<PlayerManager> players;
 
-	public GameObject[] players;
-	private PlayerManager playerM;
-
-	// Use this for initialization
 	void Start() {
-		players = GameObject.FindGameObjectsWithTag("Player");
-		EventManager eventM = playerM.eventManager;
-
-		//for (int i = 0; i < players.Length; i++)
-		//{
-		//    if (players[i] == null)
-		//    {
-		eventM.GetEvent("PlayerDeath").AddListener(DeathCount);
-		//    }
-		//}
-	}
-
-	void DeathCount(float f) {
-		players = GameObject.FindGameObjectsWithTag("Player");
-
-		Debug.Log("someone died");
-		if (players.Length == 1) {
-			SceneManager.LoadScene("WinScene");
+		foreach (PlayerManager playerM in players) {
+			playerM.eventManager.GetEvent(PlayerEvents.WasKilled).AddListener((playerNum) => {
+				players.Remove(playerM);
+				if (players.Count == 1) {
+					int winner = players[0].playerNum + 1;
+					SceneManager.LoadScene("WinScene");
+				}
+			});
 		}
 	}
 }
