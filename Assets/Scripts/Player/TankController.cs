@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class TankController : MonoBehaviour {
 	public PlayerManager playerM;
 
-	public float maxSpeed = 8; // Units per second
-	public float rotationSpeed = 180; // Degrees per second
+	private float maxSpeed; // Units per second
+	private float rotationSpeed; // Degrees per second
 
 	private EventManager eventM;
 	private UnityEventFloat moveEvent;
@@ -18,6 +18,10 @@ public class TankController : MonoBehaviour {
 	public Vector2 MoveInput { get; set; }
 
 	void Start() {
+		PlayerTweaks tweaks = BalanceTweaks.GlobalInstance.player;
+		maxSpeed = tweaks.maxSpeed;
+		rotationSpeed = tweaks.rotationSpeed;
+
 		eventM = playerM.eventManager;
 		moveEvent = eventM.GetEvent(PlayerEvents.Move);
 
