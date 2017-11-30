@@ -5,6 +5,8 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
+	public static int winner;
+
 	public List<PlayerManager> players;
 
 	void Start() {
@@ -12,7 +14,7 @@ public class GameManager : MonoBehaviour {
 			playerM.eventManager.GetEvent(PlayerEvents.WasKilled).AddListener((playerNum) => {
 				players.Remove(playerM);
 				if (players.Count == 1) {
-					int winner = players[0].playerNum + 1;
+					winner = players[0].playerNum + 1;
 					SceneManager.LoadScene("WinScene");
 				}
 			});
