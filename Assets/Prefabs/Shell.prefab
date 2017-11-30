@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61522413073466090}
   - component: {fileID: 114624736260432004}
   m_Layer: 0
-  m_Name: shell_test
+  m_Name: Shell
   m_TagString: Shell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
