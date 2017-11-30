@@ -5,7 +5,7 @@ using UnityEngine;
 public class Energy : PlayerStat {
 	private void Start() {
 		EventManager eventM = playerM.eventManager;
-		EnergyTweaks tweaks = BalanceTweaks.globalInstance.energy;
+		EnergyTweaks tweaks = BalanceTweaks.GlobalInstance.energy;
 
 		this.Init(eventM.GetEvent(PlayerEvents.EnergyChanged), tweaks.maxEnergy);
 

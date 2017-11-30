@@ -11,7 +11,7 @@ public class TankController : MonoBehaviour {
 
 	private EventManager eventM;
 	private UnityEventFloat moveEvent;
-    private UnityEventFloat deathEvent;
+	private UnityEventFloat deathEvent;
 
 	private Rigidbody2D rb;
 
@@ -21,7 +21,7 @@ public class TankController : MonoBehaviour {
 	void Start() {
 		eventM = playerM.eventManager;
 		moveEvent = eventM.GetEvent("move");
-        deathEvent = eventM.GetEvent("PlayerDeath");
+		deathEvent = eventM.GetEvent("PlayerDeath");
 
 		MoveInput = Vector2.zero;
 
@@ -79,26 +79,4 @@ public class TankController : MonoBehaviour {
 			MoveInput = Vector2.zero;
 		}
 	}
-    /* ~Temporary~  for first playable*/
-
-    public UnityEngine.UI.Slider healthSlider;
-    public UnityEngine.UI.Text endScreen;
-
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "BasicShell")
-        {
-            healthSlider.value = healthSlider.value - 5;
-            if (healthSlider.value <= 0)
-            {
-                Destroy(this.gameObject);
-                endScreen.text = "You Lose!";
-                deathEvent.Invoke(0);
-            }
-        }
-      
-
-    }
 }

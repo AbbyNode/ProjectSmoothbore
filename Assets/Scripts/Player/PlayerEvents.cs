@@ -6,9 +6,13 @@ public class PlayerEvents {
 	public const string EnergyChanged = "EnergyChanged";
 	public const string HealthChanged = "HealthChanged";
 
+	public const string WasHit = "WasHit";
+	public const string Died = "Died";
+
 	public const string Move = "Move";
+
 	public const string BreakCrate = "BreakCrate";
-	public const string HitPlayer = "HitPlayer";
-	public const string KilledPlayer = "KilledPlayer";
-	public const string PlayerDeath = "PlayerDeath";
+
+	public const string HitOtherPlayer = "HitOtherPlayer";
+	public const string KilledPlayer = "KilledOtherPlayer";
 }
