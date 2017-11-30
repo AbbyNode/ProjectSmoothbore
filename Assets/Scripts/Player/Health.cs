@@ -15,7 +15,7 @@ public class Health : PlayerStat {
 		eventM.GetEvent(PlayerEvents.WasHit).AddListener((damage) => {
 			AdjustStatValue(-damage);
 			if (GetStatValue() <= 0) {
-				Destroy(this.gameObject);
+				Destroy(playerM.tank);
 				wasKilledEvent.Invoke(0);
 			}
 		});

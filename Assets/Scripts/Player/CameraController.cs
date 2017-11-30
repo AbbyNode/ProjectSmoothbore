@@ -14,6 +14,8 @@ public class CameraController : MonoBehaviour {
 	}
 
 	private void Update() {
-		transform.position = new Vector3(tankT.position.x, tankT.position.y, transform.position.z);
+		if (tankT != null) {
+			transform.position = new Vector3(tankT.position.x, tankT.position.y, transform.position.z);
+		}
 	}
 }
