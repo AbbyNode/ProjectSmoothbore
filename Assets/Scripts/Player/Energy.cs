@@ -7,7 +7,7 @@ public class Energy : PlayerStat {
 		EventManager eventM = playerM.eventManager;
 		EnergyTweaks tweaks = BalanceTweaks.GlobalInstance.energy;
 
-		this.Init(eventM.GetEvent(PlayerEvents.EnergyChanged), tweaks.maxEnergy);
+		Init(eventM.GetEvent(PlayerEvents.EnergyChanged), tweaks.maxEnergy);
 
 		eventM.GetEvent(PlayerEvents.Move).AddListener((f) => AdjustStatValue(tweaks.move));
 		eventM.GetEvent(PlayerEvents.BreakCrate).AddListener((f) => AdjustStatValue(tweaks.breakCrate));

@@ -74,7 +74,7 @@ public class TankController : MonoBehaviour {
 				Vector2 moveVec2 = rb.position + (new Vector2(moveVec3.x, moveVec3.y));
 				rb.MovePosition(moveVec2);
 
-				moveEvent.Invoke(0);
+				moveEvent.Invoke(moveAmt);
 			}
 
 			// Reset vector for next time
