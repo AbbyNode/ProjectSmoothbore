@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50216233975694038}
   - component: {fileID: 61522413073466090}
   - component: {fileID: 114624736260432004}
+  - component: {fileID: 114702704547771570}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Shell
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047042589501386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8615828, y: 0.48198962, z: 0}
+  m_LocalPosition: {x: -36.96685, y: 26.03279, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,6 +101,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 0}
+--- !u!114 &114702704547771570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1047042589501386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5dbf9e4a1f5294a9c9bbc8d12a6662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 0}
+  SparkAni: {fileID: 1451702151694346, guid: 196555386598cca4d83416639fd8e72a, type: 2}
 --- !u!212 &212294953222700118
 SpriteRenderer:
   m_ObjectHideFlags: 1
