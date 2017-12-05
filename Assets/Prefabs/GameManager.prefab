@@ -409,6 +409,7 @@ GameObject:
   - component: {fileID: 50103374569293906}
   - component: {fileID: 114118055443790104}
   - component: {fileID: 114153836401619898}
+  - component: {fileID: 114901598080806056}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -617,6 +618,7 @@ GameObject:
   - component: {fileID: 50128175208705786}
   - component: {fileID: 114383958059362398}
   - component: {fileID: 114716167879000504}
+  - component: {fileID: 114889649834991408}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -739,6 +741,7 @@ GameObject:
   - component: {fileID: 50919985504423776}
   - component: {fileID: 114922203195292014}
   - component: {fileID: 114104509587084904}
+  - component: {fileID: 114511162243241082}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -1104,6 +1107,7 @@ GameObject:
   - component: {fileID: 50320706634925420}
   - component: {fileID: 114267986337121894}
   - component: {fileID: 114304775107558106}
+  - component: {fileID: 114574853608771806}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -1135,7 +1139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1187536006611146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50, y: -30, z: 0}
+  m_LocalPosition: {x: 65.5, y: -35.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4802720772586292}
@@ -1166,7 +1170,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1454718205286794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50, y: 0, z: 0}
+  m_LocalPosition: {x: 68.3, y: 12.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4960615722193624}
@@ -1195,7 +1199,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160500386953394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4672147737145740}
@@ -1311,7 +1315,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1228744831892844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -30, z: 0}
+  m_LocalPosition: {x: -22.1, y: -33.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4897516117328458}
@@ -1353,7 +1357,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1312472617645188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -22.5, y: 12.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4791164307429488}
@@ -2068,8 +2072,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 114601985636670878}
-  maxSpeed: 8
-  rotationSpeed: 180
 --- !u!114 &114122222168917244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2415,8 +2417,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 114381122173207712}
-  maxSpeed: 8
-  rotationSpeed: 180
 --- !u!114 &114274745592126534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2599,8 +2599,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 114878081240729610}
-  maxSpeed: 8
-  rotationSpeed: 180
 --- !u!114 &114389926024156990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2854,6 +2852,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f1b4726eff6c94998daaca84b50ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player:
+    maxSpeed: 10
+    rotationSpeed: 180
   health:
     player: 10
   energy:
@@ -2880,6 +2881,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 114601985636670878}
+--- !u!114 &114511162243241082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1602634996291030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d65f0e5b0fa93d49b9fb3d435ffa985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 0}
+  shakeAmt: 0
+  mainCamera: {fileID: 20924032559098712}
 --- !u!114 &114524191000009584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2930,6 +2945,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa9287b3a78dcb4ab2d24022fa02a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114574853608771806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991504070034828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d65f0e5b0fa93d49b9fb3d435ffa985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 0}
+  shakeAmt: 0
+  mainCamera: {fileID: 20948982129689736}
 --- !u!114 &114579111099308318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3412,6 +3441,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 114878081240729610}
+--- !u!114 &114889649834991408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1531833311048724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d65f0e5b0fa93d49b9fb3d435ffa985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 0}
+  shakeAmt: 0
+  mainCamera: {fileID: 20008462687293930}
+--- !u!114 &114901598080806056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354839570583580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d65f0e5b0fa93d49b9fb3d435ffa985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 0}
+  shakeAmt: 0
+  mainCamera: {fileID: 20153057939985916}
 --- !u!114 &114907855878831374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3468,8 +3525,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 114777152317601638}
-  maxSpeed: 8
-  rotationSpeed: 180
 --- !u!114 &114926837422861438
 MonoBehaviour:
   m_ObjectHideFlags: 1

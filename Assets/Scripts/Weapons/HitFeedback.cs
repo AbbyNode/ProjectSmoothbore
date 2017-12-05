@@ -8,7 +8,6 @@ public class HitFeedback : ShellController {
 	void Start () {
 		
 	}
-	
 	// Update is called once per frame
 	void Update () {		
 	}
