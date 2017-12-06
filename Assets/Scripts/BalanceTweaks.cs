@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class InventoryTweaks {
-	public int inventorySize;
+	public int inventorySize = 8;
 }
 
 [System.Serializable]
@@ -52,7 +52,8 @@ public class BalanceTweaks : MonoBehaviour {
 		}
 	}
 
-	public TankTweaks player;
+	public InventoryTweaks inventory;
+	public TankTweaks tank;
 	public HealthTweaks health;
 	public EnergyTweaks energy;
 	public ModuleCostTweaks moduleCosts;

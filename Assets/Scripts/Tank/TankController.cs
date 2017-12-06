@@ -18,7 +18,7 @@ public class TankController : MonoBehaviour {
 	public Vector2 MoveInput { get; set; }
 
 	void Start() {
-		TankTweaks tweaks = BalanceTweaks.GlobalInstance.player;
+		TankTweaks tweaks = BalanceTweaks.GlobalInstance.tank;
 		maxSpeed = tweaks.maxSpeed;
 		rotationSpeed = tweaks.rotationSpeed;
 
