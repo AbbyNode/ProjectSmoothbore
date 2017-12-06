@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryItem : MonoBehaviour {
+//public class InventoryItem : MonoBehaviour {
 
-	void Start () {
+//	void Start () {
 		
-	}
+//	}
 	
-	void Update () {
+//	void Update () {
 		
-	}
-}
+//	}
+//}
