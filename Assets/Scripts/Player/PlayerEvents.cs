@@ -11,6 +11,9 @@ public class PlayerEvents {
 
 	public const string Move = "Move";
 
+	public const string GotItem = "GotItem";
+	public const string RemovedItem = "RemovedItem";
+
 	public const string BreakCrate = "BreakCrate";
 
 	public const string HitEnemy = "HitEnemy";

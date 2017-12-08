@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 114999739369450466}
   - component: {fileID: 114580488393763260}
   - component: {fileID: 114816846330270176}
+  - component: {fileID: 114867142682182806}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -682,7 +683,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784299864453888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.8, y: -21.6, z: 0}
+  m_LocalPosition: {x: -46.950474, y: 26.429935, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4402857485389692}
@@ -1695,7 +1696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1275e70d5cd3f749b3504bea08390b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNum: 3
+  playerNum: 0
   eventManager: {fileID: 114741413813703268}
   energy: {fileID: 114816846330270176}
   tank: {fileID: 1177447850143788}
@@ -1848,6 +1849,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114867142682182806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784299864453888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c420ae9923e541449874bfb3a031217a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 114759482498518952}
 --- !u!114 &114871534470550884
 MonoBehaviour:
   m_ObjectHideFlags: 1
