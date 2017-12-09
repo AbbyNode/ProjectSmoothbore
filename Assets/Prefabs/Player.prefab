@@ -1032,7 +1032,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 114759482498518952}
-  shellPrefab: {fileID: 0}
+  shellPrefab: {fileID: 1047042589501386, guid: 2695dff56abb7bd43a727ca9a745a308,
+    type: 2}
   spawnPoint: {fileID: 4048642176629244}
   fireDelaySeconds: 0.5
   shellSpeed: 50
