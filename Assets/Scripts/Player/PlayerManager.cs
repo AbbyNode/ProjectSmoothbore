@@ -7,7 +7,10 @@ public class PlayerManager : MonoBehaviour {
 	public int playerNum;
 
 	public EventManager eventManager;
+	public InputManager inputManager;
+	public InventoryManager inventoryManager;
 
+	public Health health;
 	public Energy energy;
 
 	public GameObject tank;
@@ -18,8 +21,7 @@ public class PlayerManager : MonoBehaviour {
 	void Start() {
 
 	}
-
-	// Update is called once per frame
+	
 	void Update() {
 
 	}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GunController : MonoBehaviour {
 	public PlayerManager playerM;
 
-	public GameObject tankShell;
+	public GameObject shellPrefab;
 	public Transform spawnPoint;
 
 	public float fireDelaySeconds = 0.5f;
@@ -23,10 +23,10 @@ public class GunController : MonoBehaviour {
 		if (timeAccumulator > nextFire) {
 			nextFire = timeAccumulator + fireDelaySeconds;
 
-			GameObject shell = Instantiate(tankShell, spawnPoint.position, this.transform.rotation, playerM.gameObject.transform);
+			GameObject shellInst = Instantiate(shellPrefab, spawnPoint.position, this.transform.rotation, playerM.gameObject.transform);
 
-			shell.GetComponent<ShellController>().playerM = playerM;
-			shell.GetComponent<Rigidbody2D>().velocity = this.transform.right * shellSpeed;
+			shellInst.GetComponent<ShellController>().playerM = playerM;
+			shellInst.GetComponent<Rigidbody2D>().velocity = this.transform.right * shellSpeed;
 
 			nextFire = nextFire - timeAccumulator;
 			timeAccumulator = 0.0F;

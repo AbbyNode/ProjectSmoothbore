@@ -363,9 +363,9 @@ GameObject:
   - component: {fileID: 114759482498518952}
   - component: {fileID: 114741413813703268}
   - component: {fileID: 114999739369450466}
+  - component: {fileID: 114867142682182806}
   - component: {fileID: 114580488393763260}
   - component: {fileID: 114816846330270176}
-  - component: {fileID: 114867142682182806}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 114759482498518952}
-  tankShell: {fileID: 1047042589501386, guid: 2695dff56abb7bd43a727ca9a745a308, type: 2}
+  shellPrefab: {fileID: 0}
   spawnPoint: {fileID: 4048642176629244}
   fireDelaySeconds: 0.5
   shellSpeed: 50
@@ -1603,6 +1603,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNum: 0
   eventManager: {fileID: 114741413813703268}
+  inputManager: {fileID: 114999739369450466}
+  inventoryManager: {fileID: 114867142682182806}
+  health: {fileID: 114580488393763260}
   energy: {fileID: 114816846330270176}
   tank: {fileID: 1177447850143788}
   tankGun: {fileID: 1943202523564114}

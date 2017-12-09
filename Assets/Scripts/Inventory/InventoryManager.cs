@@ -18,12 +18,19 @@ public class InventoryManager : MonoBehaviour {
 	private UnityEventFloat gotItemEvent;
 	private UnityEventFloat removedItemEvent;
 
+	private GunController gunC;
+
 	void Start() {
 		EventManager eventM = playerM.eventManager;
 		InventoryTweaks tweaks = BalanceTweaks.GlobalInstance.inventory;
 
 		inventory = new InventoryItem[tweaks.inventorySize];
 		equipped = new InventoryItem[EquipSlots];
+
+		gotItemEvent = eventM.GetEvent(PlayerEvents.GotItem);
+		removedItemEvent = eventM.GetEvent(PlayerEvents.RemovedItem);
+
+		gunC = playerM.tankGun.GetComponent<GunController>();
 	}
 
 	void Update() {
@@ -51,7 +58,15 @@ public class InventoryManager : MonoBehaviour {
 	/// </summary>
 	/// <param name="index"></param>
 	public void DeleteItem(int index) {
-		removedItemEvent.Invoke(index);
 		inventory[index] = null;
+		removedItemEvent.Invoke(index);
+	}
+
+	public void equipItem(int inventoryIndex, int equippedIndex) {
+		if (inventory[inventoryIndex] != null) {
+			equipped[equippedIndex] = inventory[inventoryIndex];
+			gunC.shellPrefab = inventory[inventoryIndex].shellPrefab;
+			inventory[inventoryIndex] = null;
+		}
 	}
 }
