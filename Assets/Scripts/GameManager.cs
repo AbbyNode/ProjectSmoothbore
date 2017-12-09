@@ -5,6 +5,11 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
+	public const string mainMenuScene = "MainMenu";
+	public const string winScene = "WinScene";
+	public const string map1Scene = "Map1";
+	public const string map2Scene = "Map2";
+
 	public static int winner;
 
 	public List<PlayerManager> players;
@@ -15,7 +20,7 @@ public class GameManager : MonoBehaviour {
 				players.Remove(playerM);
 				if (players.Count == 1) {
 					winner = players[0].playerNum + 1;
-					SceneManager.LoadScene("WinScene");
+					SceneManager.LoadScene(winScene);
 				}
 			});
 		}
