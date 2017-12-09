@@ -33,10 +33,6 @@ public class InventoryManager : MonoBehaviour {
 		gunC = playerM.tankGun.GetComponent<GunController>();
 	}
 
-	void Update() {
-
-	}
-
 	/// <summary>
 	/// Adds item to inventory if possible.
 	/// </summary>

@@ -6,12 +6,9 @@ public class ItemDefinitions : MonoBehaviour {
 	
 	void Start () {
 		
-
 	}
 	
 	void Update () {
 		
 	}
-
-
 }
