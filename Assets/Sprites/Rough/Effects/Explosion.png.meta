@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 87756f87d3a2601408af2f3cfb9351b5
-timeCreated: 1512495477
+timeCreated: 1513095020
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,7 @@ TextureImporter:
     21300006: SparkEffect_3
     21300008: SparkEffect_4
     21300010: SparkEffect_5
+    21300012: SparkEffect_7
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -87,10 +88,10 @@ TextureImporter:
       name: SparkEffect_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 28
-        width: 54
-        height: 45
+        x: 71
+        y: 19
+        width: 66
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -101,10 +102,10 @@ TextureImporter:
       name: SparkEffect_1
       rect:
         serializedVersion: 2
-        x: 120
-        y: 17
-        width: 66
-        height: 71
+        x: 151
+        y: 2
+        width: 102
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,22 +116,8 @@ TextureImporter:
       name: SparkEffect_2
       rect:
         serializedVersion: 2
-        x: 200
-        y: 0
-        width: 102
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: SparkEffect_3
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 16
+        x: 275
+        y: 18
         width: 66
         height: 71
       alignment: 0
@@ -143,8 +130,8 @@ TextureImporter:
       name: SparkEffect_4
       rect:
         serializedVersion: 2
-        x: 421
-        y: 25
+        x: 5
+        y: 28
         width: 54
         height: 45
       alignment: 0
@@ -157,10 +144,38 @@ TextureImporter:
       name: SparkEffect_5
       rect:
         serializedVersion: 2
-        x: 542
-        y: 40
+        x: 359
+        y: 27
+        width: 54
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SparkEffect_7
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 39
         width: 26
         height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SparkEffect_3
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 29
+        width: 62
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
