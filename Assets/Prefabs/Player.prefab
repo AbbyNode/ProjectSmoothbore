@@ -430,6 +430,7 @@ GameObject:
   - component: {fileID: 114741413813703268}
   - component: {fileID: 114999739369450466}
   - component: {fileID: 114867142682182806}
+  - component: {fileID: 114534852086346476}
   - component: {fileID: 114580488393763260}
   - component: {fileID: 114816846330270176}
   m_Layer: 0
@@ -698,7 +699,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784299864453888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -46.950474, y: 26.429935, z: 0}
+  m_LocalPosition: {x: -39.9, y: -3.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4402857485389692}
@@ -1472,6 +1473,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114534852086346476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784299864453888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28e3324adfdad241b570b62c6b3fe03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 114759482498518952}
 --- !u!114 &114537608546684614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1770,10 +1783,13 @@ MonoBehaviour:
   eventManager: {fileID: 114741413813703268}
   inputManager: {fileID: 114999739369450466}
   inventoryManager: {fileID: 114867142682182806}
+  moduleGenerator: {fileID: 114534852086346476}
   health: {fileID: 114580488393763260}
   energy: {fileID: 114816846330270176}
   tank: {fileID: 1177447850143788}
+  tankController: {fileID: 114569391768303460}
   tankGun: {fileID: 1943202523564114}
+  gunController: {fileID: 114325410582866136}
   cam: {fileID: 20211015235921208}
 --- !u!114 &114775705895660976
 MonoBehaviour:

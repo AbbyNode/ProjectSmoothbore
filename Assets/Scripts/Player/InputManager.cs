@@ -9,7 +9,10 @@ public class InputManager : MonoBehaviour {
 	private string vMove;
 	private string anchor;
 	private string fire;
+	private string genModule;
 
+	private InventoryManager inventoryM;
+	private ModuleGenerator moduleGenerator;
 	private TankController tankC;
 	private GunController gunC;
 
@@ -20,9 +23,12 @@ public class InputManager : MonoBehaviour {
 		vMove = prefix + "Vertical";
 		anchor = prefix + "Anchor";
 		fire = prefix + "Fire";
+		genModule = prefix + "GenerateModule";
 
-		tankC = playerM.tank.GetComponent<TankController>();
-		gunC = playerM.tankGun.GetComponent<GunController>();
+		inventoryM = playerM.inventoryManager;
+		moduleGenerator = playerM.moduleGenerator;
+		tankC = playerM.tankController;
+		gunC = playerM.gunController;
 	}
 
 	void Update() {
@@ -40,6 +46,11 @@ public class InputManager : MonoBehaviour {
 		// Fire
 		if (Input.GetButtonDown(fire)) {
 			gunC.Fire();
+		}
+
+		// Generate Module
+		if (Input.GetButtonDown(genModule)) {
+			moduleGenerator.GenerateModule();
 		}
 	}
 }

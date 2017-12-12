@@ -8,21 +8,18 @@ public class PlayerManager : MonoBehaviour {
 
 	public EventManager eventManager;
 	public InputManager inputManager;
+
 	public InventoryManager inventoryManager;
+	public ModuleGenerator moduleGenerator;
 
 	public Health health;
 	public Energy energy;
 
 	public GameObject tank;
+	public TankController tankController;
+
 	public GameObject tankGun;
+	public GunController gunController;
 
 	public Camera cam;
-
-	void Start() {
-
-	}
-	
-	void Update() {
-
-	}
 }
