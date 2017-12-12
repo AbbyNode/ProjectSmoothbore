@@ -15,14 +15,14 @@ public class TankTweaks {
 
 [System.Serializable]
 public class HealthTweaks {
-	public float player = 10;
+	public float player = 5;
 }
 
 [System.Serializable]
 public class EnergyTweaks {
 	public float maxEnergy = 100;
 
-	public float move = 0.1f;
+	public float move = 0f;
 	public float breakCrate = 1;
 	public float hitPlayer = 2;
 	public float killPlayer = 10;
