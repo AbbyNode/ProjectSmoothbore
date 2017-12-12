@@ -14,12 +14,17 @@ public class ShellController : MonoBehaviour {
 
 	private UnityEventFloat hitEnemyEvent;
 
-	void Start() {
+	public void Init() {
 		hitEnemyEvent = playerM.eventManager.GetEvent(PlayerEvents.HitEnemy);
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
+		if (hitEnemyEvent == null) {
+			Debug.LogError("Event not set " + PlayerEvents.HitEnemy);
+			return;
+		}
+
+		hitEnemyEvent.Invoke(Damage);
 		Destroy(this.gameObject);
-		hitEnemyEvent.Invoke(0);
 	}
 }

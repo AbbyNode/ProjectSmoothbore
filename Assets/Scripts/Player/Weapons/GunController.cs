@@ -25,7 +25,10 @@ public class GunController : MonoBehaviour {
 
 			GameObject shellInst = Instantiate(shellPrefab, spawnPoint.position, this.transform.rotation, playerM.gameObject.transform);
 
-			shellInst.GetComponent<ShellController>().playerM = playerM;
+			ShellController shellC = shellInst.GetComponent<ShellController>();
+			shellC.playerM = playerM;
+			shellC.Init();
+
 			shellInst.GetComponent<Rigidbody2D>().velocity = this.transform.right * shellSpeed;
 
 			nextFire = nextFire - timeAccumulator;

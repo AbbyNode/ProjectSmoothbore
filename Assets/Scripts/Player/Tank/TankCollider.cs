@@ -24,7 +24,7 @@ public class TankCollider : MonoBehaviour {
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.gameObject.CompareTag("Shell")) {
+		if (collision.gameObject.CompareTag(Tags.Shell)) {
 			lastCollidedShell = collision.gameObject;
 			wasHitEvent.Invoke(collision.gameObject.GetComponent<ShellController>().Damage);
 		}
