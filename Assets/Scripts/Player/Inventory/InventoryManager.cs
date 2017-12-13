@@ -15,6 +15,9 @@ public class InventoryManager : MonoBehaviour {
 	private InventoryItem[] inventory;
 	private InventoryItem[] equipped;
 
+	private GameObject inventoryUI;
+	private GameObject equipUI;
+
 	private UnityEventFloat gotItemEvent;
 	private UnityEventFloat removedItemEvent;
 
@@ -26,7 +29,7 @@ public class InventoryManager : MonoBehaviour {
 
 		inventory = new InventoryItem[tweaks.inventorySize];
 		equipped = new InventoryItem[EquipSlots];
-
+		
 		gotItemEvent = eventM.GetEvent(PlayerEvents.GotItem);
 		removedItemEvent = eventM.GetEvent(PlayerEvents.RemovedItem);
 

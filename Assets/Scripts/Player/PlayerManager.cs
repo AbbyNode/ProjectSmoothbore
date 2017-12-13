@@ -15,7 +15,10 @@ public class PlayerManager : MonoBehaviour {
 	public Health health;
 	public Energy energy;
 
-	public GameObject tank;
+    public GameObject inventorySlots;
+    public GameObject equipSlots;
+
+    public GameObject tank;
 	public TankController tankController;
 
 	public GameObject tankGun;
