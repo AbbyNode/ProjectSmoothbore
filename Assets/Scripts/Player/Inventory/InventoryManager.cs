@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class EquippedSlot {
 	public const int Turret = 0;
@@ -12,6 +13,8 @@ public class InventoryManager : MonoBehaviour {
 
 	public PlayerManager playerM;
 
+	public InventoryItem testThing;
+
 	private InventoryItem[] inventory;
 	private InventoryItem[] equipped;
 
@@ -21,6 +24,9 @@ public class InventoryManager : MonoBehaviour {
 	private UnityEventFloat gotItemEvent;
 	private UnityEventFloat removedItemEvent;
 
+	private GameObject tank;
+	private GameObject tankGun;
+
 	private GunController gunC;
 
 	void Start() {
@@ -29,11 +35,20 @@ public class InventoryManager : MonoBehaviour {
 
 		inventory = new InventoryItem[tweaks.inventorySize];
 		equipped = new InventoryItem[EquipSlots];
-		
+
+		inventoryUI = playerM.inventorySlots;
+		equipUI = playerM.equipSlots;
+
 		gotItemEvent = eventM.GetEvent(PlayerEvents.GotItem);
 		removedItemEvent = eventM.GetEvent(PlayerEvents.RemovedItem);
 
+		tank = playerM.tank;
+		tankGun = playerM.tankGun;
+
 		gunC = playerM.tankGun.GetComponent<GunController>();
+
+		AddItem(testThing);
+		equipItem(0, 0);
 	}
 
 	/// <summary>
@@ -45,11 +60,36 @@ public class InventoryManager : MonoBehaviour {
 		for (int i = 0; i < inventory.Length; i++) {
 			if (inventory[i] == null) {
 				inventory[i] = item;
+				SetInventoryIcon(i, item.inventoryIcon);
 				gotItemEvent.Invoke(i);
 				return true;
 			}
 		}
 		return false;
+	}
+
+	public void equipItem(int inventoryIndex, int equippedIndex) {
+		if (inventory[inventoryIndex] != null) {
+			equipped[equippedIndex] = inventory[inventoryIndex];
+
+			Destroy(tankGun);
+			tankGun = Instantiate(equipped[equippedIndex].inGameObject, tank.transform);
+
+			SetInventoryIcon(inventoryIndex, null);
+			SetEquipIcon(equippedIndex, equipped[equippedIndex].inventoryIcon);
+
+			inventory[inventoryIndex] = null;
+		}
+	}
+
+	private void SetInventoryIcon(int index, Sprite icon) {
+		Transform obj = inventoryUI.transform.GetChild(index).GetChild(0);
+		obj.GetComponent<Image>().sprite = icon;
+	}
+
+	private void SetEquipIcon(int index, Sprite icon) {
+		Transform obj = equipUI.transform.GetChild(index).GetChild(0);
+		obj.GetComponent<Image>().sprite = icon;
 	}
 
 	/// <summary>
@@ -59,13 +99,5 @@ public class InventoryManager : MonoBehaviour {
 	public void DeleteItem(int index) {
 		inventory[index] = null;
 		removedItemEvent.Invoke(index);
-	}
-
-	public void equipItem(int inventoryIndex, int equippedIndex) {
-		if (inventory[inventoryIndex] != null) {
-			equipped[equippedIndex] = inventory[inventoryIndex];
-			gunC.shellPrefab = inventory[inventoryIndex].shellPrefab;
-			inventory[inventoryIndex] = null;
-		}
 	}
 }
