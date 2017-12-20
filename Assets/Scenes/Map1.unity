@@ -8427,11 +8427,6 @@ Prefab:
       propertyPath: m_Name
       value: Player0
       objectReference: {fileID: 0}
-    - target: {fileID: 224208568740895594, guid: 2cfc3867593f2e0448fb24d936b84ed1,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.x
