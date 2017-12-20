@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4390225075566262}
   - component: {fileID: 212754209585618998}
-  - component: {fileID: 60014812319511190}
+  - component: {fileID: 60060735746712352}
   m_Layer: 0
   m_Name: log4
   m_TagString: Untagged
@@ -34,14 +34,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1360119992426610}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.766239, y: -22.456804, z: 0}
+  m_LocalRotation: {x: -0.005615755, y: -0.019020328, z: -0.28311017, w: 0.9588824}
+  m_LocalPosition: {x: -16.59, y: 33.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60014812319511190
+  m_LocalEulerAnglesHint: {x: -1.2340001, y: -1.909, z: -32.878002}
+--- !u!60 &60060735746712352
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
