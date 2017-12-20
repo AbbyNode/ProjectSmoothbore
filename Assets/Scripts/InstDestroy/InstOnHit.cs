@@ -7,7 +7,7 @@ public class InstOnHit : MonoBehaviour {
 	public GameObject objToInst;
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.CompareTag(hitTag)) {
+		if (hitTag == "" || coll.gameObject.CompareTag(hitTag)) {
 			GameObject obj = Instantiate(this.objToInst, this.transform.position, this.transform.rotation) as GameObject;
 		}
 	}

@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5dbf9e4a1f5294a9c9bbc8d12a6662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitTag: 
   objToInst: {fileID: 1451702151694346, guid: 196555386598cca4d83416639fd8e72a, type: 2}
 --- !u!212 &212294953222700118
 SpriteRenderer:
@@ -122,7 +123,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -138,7 +138,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

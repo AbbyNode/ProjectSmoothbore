@@ -45,7 +45,7 @@ public class InventoryManager : MonoBehaviour {
 		tank = playerM.tank;
 		tankGun = playerM.tankGun;
 
-		gunC = playerM.tankGun.GetComponent<GunController>();
+		gunC = playerM.gunController;
 
 		AddItem(testThing);
 		equipItem(0, 0);
@@ -75,7 +75,14 @@ public class InventoryManager : MonoBehaviour {
 			Destroy(tankGun);
 			tankGun = Instantiate(equipped[equippedIndex].inGameObject, tank.transform);
 
-			SetInventoryIcon(inventoryIndex, null);
+            playerM.tankGun = tankGun;
+            playerM.gunController = tankGun.GetComponent<GunController>();
+
+            // TODO: Organize
+            gunC = playerM.gunController;
+            gunC.playerM = playerM;
+
+            SetInventoryIcon(inventoryIndex, null);
 			SetEquipIcon(equippedIndex, equipped[equippedIndex].inventoryIcon);
 
 			inventory[inventoryIndex] = null;

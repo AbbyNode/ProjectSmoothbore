@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4076498013493818}
   - component: {fileID: 114233842592073866}
   m_Layer: 0
-  m_Name: HeavyMachineGunItem
+  m_Name: TankGun_Basic_Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1411938454376624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.39945, y: -1.0156298, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,5 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryIcon: {fileID: 21300000, guid: 26d61794283882c47bf925ac29293041, type: 3}
-  inGameObject: {fileID: 1101242132701672, guid: eb988d884e6413647a261b8b60948f1b,
+  inGameObject: {fileID: 1939010119624316, guid: b0cbb507ba6edac49b772434290b502c,
     type: 2}
