@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour {
 	public Button map1Button;
 	public Button map2Button;
+    public Button map3Button;
 
-	void Start() {
+    void Start() {
 		map1Button.onClick.AddListener(() => {
 			SceneManager.LoadScene(GameManager.map1Scene);
 		});
@@ -16,5 +17,8 @@ public class MainMenu : MonoBehaviour {
 		map2Button.onClick.AddListener(() => {
 			SceneManager.LoadScene(GameManager.map2Scene);
 		});
-	}
+        map3Button.onClick.AddListener(() => {
+            SceneManager.LoadScene(GameManager.map3Scene);
+        });
+    }
 }
