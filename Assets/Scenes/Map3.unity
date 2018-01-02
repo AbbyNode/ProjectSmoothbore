@@ -7266,7 +7266,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -15372,7 +15371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 2080655187}
-  testThing: {fileID: 114233842592073866, guid: 8f89551d2f037364e87698f1745ca184,
+  startingGun: {fileID: 114233842592073866, guid: 8f89551d2f037364e87698f1745ca184,
     type: 2}
 --- !u!114 &2001199165
 MonoBehaviour:

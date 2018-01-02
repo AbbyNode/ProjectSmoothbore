@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour {
 
 	public PlayerManager playerM;
 
-	public InventoryItem testThing;
+	public InventoryItem startingGun;
 
 	private InventoryItem[] inventory;
 	private InventoryItem[] equipped;
@@ -47,7 +47,7 @@ public class InventoryManager : MonoBehaviour {
 
 		gunC = playerM.gunController;
 
-		AddItem(testThing);
+		AddItem(startingGun);
 		equipItem(0, 0);
 	}
 
