@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GunController : MonoBehaviour {
+	public const int LAYER_START_INDEX = 8;
+
 	public PlayerManager playerM;
 
 	public Transform shellSpawn;
@@ -30,8 +32,11 @@ public class GunController : MonoBehaviour {
 				float shellAngle = Random.Range(startAngle, endAngle);
 				
 				GameObject shellInst = Instantiate(shellPrefab, shellSpawn.position, Quaternion.Euler(0, 0, shellAngle), playerM.gameObject.transform);
+
 				ShellController shellC = shellInst.GetComponent<ShellController>();
 				shellC.playerM = playerM;
+
+				shellInst.layer = LAYER_START_INDEX + playerM.playerNum;
 			}
 
 			timeAccumulator = 0.0F;

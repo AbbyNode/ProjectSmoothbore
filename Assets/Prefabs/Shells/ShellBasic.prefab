@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 0}
-  damage: 1
+  damage: 2
   speed: 20
-  destroyTime: 1
+  destroyTime: 2
 --- !u!114 &114702704547771570
 MonoBehaviour:
   m_ObjectHideFlags: 1

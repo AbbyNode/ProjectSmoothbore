@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class InventoryTweaks {
-	public int inventorySize = 8;
-}
-
-[System.Serializable]
 public class TankTweaks {
 	public float maxSpeed = 10;  // Units per second
 	public float rotationSpeed = 180; // Degrees per second
@@ -36,8 +31,14 @@ public class ModuleCostTweaks {
 }
 
 [System.Serializable]
-public class DamageTweaks {
-	public float basicShell = 1;
+public class WeaponTweaks {
+	public float fireDelaySeconds = 0.5f;
+	public int shellsPerShot = 1;
+	public float shellSpreadDeg = 1;
+
+	public float damage = 1;
+	public float speed = 20;
+	public float destroyTime = 2;
 }
 
 public class BalanceTweaks : MonoBehaviour {
@@ -52,12 +53,15 @@ public class BalanceTweaks : MonoBehaviour {
 		}
 	}
 
-	public InventoryTweaks inventory;
 	public TankTweaks tank;
 	public HealthTweaks health;
 	public EnergyTweaks energy;
 	public ModuleCostTweaks moduleCosts;
-	public DamageTweaks damage;
+	public WeaponTweaks basicGun;
+	public WeaponTweaks machineGun;
+	public WeaponTweaks shotGun;
+	public WeaponTweaks heavyGun;
+	public WeaponTweaks sniperGun;
 
 	private void Awake() {
 		if (_globalInstance != null && _globalInstance != this) {

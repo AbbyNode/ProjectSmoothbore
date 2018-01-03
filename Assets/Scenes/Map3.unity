@@ -5306,6 +5306,21 @@ Prefab:
       propertyPath: m_Name
       value: Player0
       objectReference: {fileID: 0}
+    - target: {fileID: 114124659125549614, guid: 2cfc3867593f2e0448fb24d936b84ed1,
+        type: 2}
+      propertyPath: shellsPerShot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114124659125549614, guid: 2cfc3867593f2e0448fb24d936b84ed1,
+        type: 2}
+      propertyPath: shellSpreadDeg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114124659125549614, guid: 2cfc3867593f2e0448fb24d936b84ed1,
+        type: 2}
+      propertyPath: fireDelaySeconds
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cfc3867593f2e0448fb24d936b84ed1, type: 2}
   m_IsPrefabParent: 0
