@@ -6,11 +6,11 @@ using UnityEngine.Events;
 public class ShellController : MonoBehaviour {
 	public PlayerManager playerM;
 
-	public float damage;
-	public float speed;
-	public float destroyTime;
+	public float damage = 1;
 
-	void Start() {
+	public void Init(float damage, float speed, float destroyTime) {
+		this.damage = damage;
+
 		GetComponent<Rigidbody2D>().velocity = this.transform.right * speed;
 		Destroy(gameObject, destroyTime);
 	}

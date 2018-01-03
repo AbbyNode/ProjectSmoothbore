@@ -34,11 +34,12 @@ public class ModuleCostTweaks {
 public class WeaponTweaks {
 	public float fireDelaySeconds = 0.5f;
 	public int shellsPerShot = 1;
-	public float shellSpreadDeg = 1;
+	public float shotSpread = 1;
 
-	public float damage = 1;
-	public float speed = 20;
-	public float destroyTime = 2;
+	public GameObject shellPrefab;
+	public float shellDamage = 1;
+	public float shellSpeed = 20;
+	public float shellDestroyTime = 2;
 }
 
 public class BalanceTweaks : MonoBehaviour {

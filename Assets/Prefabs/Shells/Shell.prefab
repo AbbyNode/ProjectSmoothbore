@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114624736260432004}
   - component: {fileID: 114702704547771570}
   m_Layer: 0
-  m_Name: ShellBasic
+  m_Name: Shell
   m_TagString: Shell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,9 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 0}
-  damage: 2
-  speed: 20
-  destroyTime: 2
+  damage: 1
 --- !u!114 &114702704547771570
 MonoBehaviour:
   m_ObjectHideFlags: 1
