@@ -27,7 +27,7 @@ public class TankCollider : MonoBehaviour {
 			lastAttacker = collision.gameObject.GetComponent<ShellController>().playerM;
 			lastAttacker.eventManager.GetEvent(PlayerEvents.HitEnemy).Invoke(playerM.playerNum);
 			
-			wasHitEvent.Invoke(collision.gameObject.GetComponent<ShellController>().Damage);
+			wasHitEvent.Invoke(collision.gameObject.GetComponent<ShellController>().damage);
 		}
 	}
 }

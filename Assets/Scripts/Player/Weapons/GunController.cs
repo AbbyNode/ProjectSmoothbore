@@ -5,12 +5,13 @@ using UnityEngine;
 public class GunController : MonoBehaviour {
 	public PlayerManager playerM;
 
+	public Transform shellSpawn;
+
 	public GameObject shellPrefab;
-	public Transform spawnPoint;
 
 	public float fireDelaySeconds = 0.5f;
-	public float shellSpeed = 5.0f;
-	public float destroyTime = 2.0f;
+	public int shellsPerShot = 1;
+	public float shellSpreadDeg = 1;
 
 	private float nextFire = 0.5f;
 	private float timeAccumulator = 0.0f;
@@ -20,17 +21,19 @@ public class GunController : MonoBehaviour {
 	}
 
 	public void Fire() {
-		if (timeAccumulator > nextFire) {
-			nextFire = timeAccumulator + fireDelaySeconds;
+		if (timeAccumulator > fireDelaySeconds) {
+			float anglePerShell = shellSpreadDeg / shellsPerShot;
+			float startAngle = this.transform.rotation.eulerAngles.z - (shellSpreadDeg/2);
+			float endAngle = startAngle + shellSpreadDeg;
 
-			GameObject shellInst = Instantiate(shellPrefab, spawnPoint.position, this.transform.rotation, playerM.gameObject.transform);
+			for (int i = 0; i < shellsPerShot; i++) {
+				float shellAngle = Random.Range(startAngle, endAngle);
+				
+				GameObject shellInst = Instantiate(shellPrefab, shellSpawn.position, Quaternion.Euler(0, 0, shellAngle), playerM.gameObject.transform);
+				ShellController shellC = shellInst.GetComponent<ShellController>();
+				shellC.playerM = playerM;
+			}
 
-			ShellController shellC = shellInst.GetComponent<ShellController>();
-			shellC.playerM = playerM;
-			
-			shellInst.GetComponent<Rigidbody2D>().velocity = this.transform.right * shellSpeed;
-
-			nextFire = nextFire - timeAccumulator;
 			timeAccumulator = 0.0F;
 		}
 	}

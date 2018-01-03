@@ -413,7 +413,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784299864453888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -46.24626, y: -3.95375, z: 0.8120047}
+  m_LocalPosition: {x: -84.38, y: 44.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4402857485389692}
@@ -697,12 +697,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 114759482498518952}
+  shellSpawn: {fileID: 4401609004823166}
   shellPrefab: {fileID: 1047042589501386, guid: 2695dff56abb7bd43a727ca9a745a308,
     type: 2}
-  spawnPoint: {fileID: 4401609004823166}
-  fireDelaySeconds: 0.5
-  shellSpeed: 50
-  destroyTime: 2
+  fireDelaySeconds: 0.4
+  shellsPerShot: 1
+  shellSpreadDeg: 1
 --- !u!114 &114165926588653230
 MonoBehaviour:
   m_ObjectHideFlags: 1

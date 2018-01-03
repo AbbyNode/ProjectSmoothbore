@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyOnHit : MonoBehaviour {
+	public string hitTag;
+
 	private void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.gameObject.CompareTag(Tags.Shell)) {
+		if (hitTag == "" || collision.gameObject.CompareTag(hitTag)) {
 			Destroy(this.gameObject);
 		}
 	}
