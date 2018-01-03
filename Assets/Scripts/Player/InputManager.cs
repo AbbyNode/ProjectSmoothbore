@@ -7,9 +7,12 @@ public class InputManager : MonoBehaviour {
 
 	private string hMove;
 	private string vMove;
-	private string anchor;
+	// private string anchor;
 	private string fire;
-	private string genModule;
+	// private string genModule;
+	private string selectOne;
+	private string selectTwo;
+	private string selectThree;
 
 	// private InventoryManager inventoryM;
 	// private ModuleGenerator1 moduleGenerator;
@@ -21,9 +24,12 @@ public class InputManager : MonoBehaviour {
 
 		hMove = prefix + "Horizontal";
 		vMove = prefix + "Vertical";
-		anchor = prefix + "Anchor";
+		// anchor = prefix + "Anchor";
 		fire = prefix + "Fire";
-		genModule = prefix + "GenerateModule";
+		// genModule = prefix + "GenerateModule";
+		selectOne = prefix + "SelectOne";
+		selectTwo = prefix + "SelectTwo";
+		selectThree = prefix + "SelectThree";
 
 		// inventoryM = playerM.inventoryManager;
 		// moduleGenerator1 = playerM.moduleGenerator;
@@ -33,7 +39,7 @@ public class InputManager : MonoBehaviour {
 
 	void Update() {
 		// Anchor
-		tankC.IsAnchored = (Input.GetAxisRaw(anchor) != 0);
+		// tankC.IsAnchored = (Input.GetAxisRaw(anchor) != 0);
 
 		// Move
 		Vector2 moveInput = Vector2.zero;
@@ -49,8 +55,10 @@ public class InputManager : MonoBehaviour {
 		}
 
 		// Generate Module
-		if (Input.GetButtonDown(genModule)) {
+		// if (Input.GetButtonDown(genModule)) {
 			// moduleGenerator.GenerateModule();
-		}
+		// }
+
+
 	}
 }
