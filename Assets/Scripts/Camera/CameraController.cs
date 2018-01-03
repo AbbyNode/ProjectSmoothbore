@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour {
 	private Transform tankT;
 
 	void Start() {
-		tankT = playerM.tank.transform;
+		tankT = playerM.tankObj.transform;
 
 		this.GetComponent<Camera>().rect = new Rect((playerM.playerNum % 2 == 0 ? 0f : 0.5f), (playerM.playerNum <= 1 ? 0.5f : 0f), 0.5f, 0.5f);
 	}

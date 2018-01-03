@@ -12,10 +12,12 @@ public class PlayerManager : MonoBehaviour {
 	public Health health;
 	public Energy energy;
 
-    public GameObject tank;
+    public GameObject tankObj;
 	public TankController tankController;
 
-	public GameObject tankGun;
+	public GameObject hullObj;
+
+	public GameObject gunObj;
 	public GunController gunController;
 
 	public Camera cam;
