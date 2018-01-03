@@ -6,6 +6,7 @@ public class Health : PlayerStat {
 	void Start() {
 		EventManager eventM = playerM.eventManager;
 		HealthTweaks tweaks = BalanceTweaks.GlobalInstance.health;
+        Vector3 spawnPoint = playerM.tankObj.transform.position;
 		
 		Init(eventM.GetEvent(PlayerEvents.HealthChanged), tweaks.player);
 		SetStatValue(tweaks.player);
@@ -15,7 +16,9 @@ public class Health : PlayerStat {
 		eventM.GetEvent(PlayerEvents.WasHit).AddListener((damage) => {
 			AdjustStatValue(-damage);
 			if (GetStatValue() <= 0) {
-				Destroy(playerM.tankObj);
+                playerM.tankObj.transform.position = spawnPoint;
+                SetStatValue(100);
+
 				wasKilledEvent.Invoke(0);
 			}
 		});
