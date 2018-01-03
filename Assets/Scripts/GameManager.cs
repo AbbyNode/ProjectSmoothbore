@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
 
 	void Start() {
 		foreach (PlayerManager playerM in players) {
-			playerM.eventManager.GetEvent(PlayerEvents.WasKilled).AddListener((playerNum) => {
+			playerM.eventManager.GetEvent(PlayerEvents.Lost).AddListener((playerNum) => {
 				players.Remove(playerM);
 				if (players.Count == 1) {
 					winner = players[0].playerNum + 1;

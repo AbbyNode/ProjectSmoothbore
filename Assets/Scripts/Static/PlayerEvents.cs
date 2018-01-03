@@ -8,6 +8,7 @@ public class PlayerEvents {
 
 	public const string WasHit = "WasHit";
 	public const string WasKilled = "WasKilled";
+    public const string Lost = "Lost";
 
 	public const string Move = "Move";
 
