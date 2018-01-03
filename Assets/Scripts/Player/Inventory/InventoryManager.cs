@@ -36,8 +36,8 @@ public class InventoryManager : MonoBehaviour {
 		inventory = new InventoryItem[tweaks.inventorySize];
 		equipped = new InventoryItem[EquipSlots];
 
-		inventoryUI = playerM.inventorySlots;
-		equipUI = playerM.equipSlots;
+		// inventoryUI = playerM.inventorySlots;
+		// equipUI = playerM.equipSlots;
 
 		gotItemEvent = eventM.GetEvent(PlayerEvents.GotItem);
 		removedItemEvent = eventM.GetEvent(PlayerEvents.RemovedItem);

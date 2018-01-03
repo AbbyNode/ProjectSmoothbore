@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ModuleGenerator : MonoBehaviour {
+public class ModuleGenerator1 : MonoBehaviour {
 	public PlayerManager playerM;
 
 	private ModuleCostTweaks tweaks;
@@ -13,7 +13,7 @@ public class ModuleGenerator : MonoBehaviour {
 	void Start() {
 		tweaks = tweaks = BalanceTweaks.GlobalInstance.moduleCosts;
 
-		inventoryM = playerM.inventoryManager;
+		// inventoryM = playerM.inventoryManager;
 		energy = playerM.energy;
 	}
 

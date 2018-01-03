@@ -11,8 +11,8 @@ public class InputManager : MonoBehaviour {
 	private string fire;
 	private string genModule;
 
-	private InventoryManager inventoryM;
-	private ModuleGenerator moduleGenerator;
+	// private InventoryManager inventoryM;
+	// private ModuleGenerator1 moduleGenerator;
 	private TankController tankC;
 	private GunController gunC;
 
@@ -25,8 +25,8 @@ public class InputManager : MonoBehaviour {
 		fire = prefix + "Fire";
 		genModule = prefix + "GenerateModule";
 
-		inventoryM = playerM.inventoryManager;
-		moduleGenerator = playerM.moduleGenerator;
+		// inventoryM = playerM.inventoryManager;
+		// moduleGenerator1 = playerM.moduleGenerator;
 		tankC = playerM.tankController;
 		gunC = playerM.gunController;
 	}
@@ -50,7 +50,7 @@ public class InputManager : MonoBehaviour {
 
 		// Generate Module
 		if (Input.GetButtonDown(genModule)) {
-			moduleGenerator.GenerateModule();
+			// moduleGenerator.GenerateModule();
 		}
 	}
 }
