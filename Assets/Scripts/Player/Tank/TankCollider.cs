@@ -24,10 +24,12 @@ public class TankCollider : MonoBehaviour {
 
 	private void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.CompareTag(Tags.Shell)) {
+			float dmg = collision.gameObject.GetComponent<ShellController>().damage;
+
 			lastAttacker = collision.gameObject.GetComponent<ShellController>().playerM;
-			lastAttacker.eventManager.GetEvent(PlayerEvents.HitEnemy).Invoke(playerM.playerNum);
+			lastAttacker.eventManager.GetEvent(PlayerEvents.HitEnemy).Invoke(dmg);
 			
-			wasHitEvent.Invoke(collision.gameObject.GetComponent<ShellController>().damage);
+			wasHitEvent.Invoke(dmg);
 		}
 	}
 }

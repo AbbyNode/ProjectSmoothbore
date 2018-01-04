@@ -60,25 +60,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f1b4726eff6c94998daaca84b50ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory:
-    inventorySize: 8
   tank:
     maxSpeed: 10
     rotationSpeed: 180
   health:
-    player: 10
+    lives: 3
+    health: 5
   energy:
     maxEnergy: 100
     move: 0
     breakCrate: 1
-    hitPlayer: 2
-    killPlayer: 10
+    hitEnemyScale: 10
+    killEnemy: 10
   moduleCosts:
-    basicGun: 10
-    ricochetGun: 20
-    rocketGun: 30
-  damage:
-    basicShell: 1
+    gunUpgrade: 50
+  basicGun:
+    fireDelaySeconds: 0.5
+    shellsPerShot: 1
+    shotSpread: 5
+    shellDamage: 1
+    shellSpeed: 20
+    shellDestroyTime: 2
+    shellPrefab: {fileID: 1047042589501386, guid: 2695dff56abb7bd43a727ca9a745a308,
+      type: 2}
+  machineGun:
+    fireDelaySeconds: 0.1
+    shellsPerShot: 1
+    shotSpread: 5
+    shellDamage: 0.5
+    shellSpeed: 20
+    shellDestroyTime: 3
+    shellPrefab: {fileID: 0}
+  shotGun:
+    fireDelaySeconds: 0.8
+    shellsPerShot: 4
+    shotSpread: 45
+    shellDamage: 0.5
+    shellSpeed: 20
+    shellDestroyTime: 2
+    shellPrefab: {fileID: 0}
+  heavyGun:
+    fireDelaySeconds: 0.5
+    shellsPerShot: 1
+    shotSpread: 5
+    shellDamage: 2
+    shellSpeed: 20
+    shellDestroyTime: 2
+    shellPrefab: {fileID: 1534861390435616, guid: e417a0d164adf2245a5de29203e6a6e3,
+      type: 2}
+  sniperGun:
+    fireDelaySeconds: 0.5
+    shellsPerShot: 1
+    shotSpread: 1
+    shellDamage: 1
+    shellSpeed: 60
+    shellDestroyTime: 2
+    shellPrefab: {fileID: 0}
 --- !u!114 &114409076818246300
 MonoBehaviour:
   m_ObjectHideFlags: 1

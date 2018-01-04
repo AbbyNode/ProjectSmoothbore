@@ -3,32 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : PlayerStat {
-    public int lives = 3;
-    void Start() {
+	private UnityEventFloat wasKilledEvent;
+	private UnityEventFloat lostEvent;
+
+	private Vector3 spawnPoint;
+	private int lives;
+
+	void Start() {
 		EventManager eventM = playerM.eventManager;
-		HealthTweaks tweaks = BalanceTweaks.GlobalInstance.health;
-        Vector3 spawnPoint = playerM.tankObj.transform.position;
+		HealthTweaks healthTweaks = BalanceTweaks.GlobalInstance.health;
+
+		Init(eventM.GetEvent(PlayerEvents.HealthChanged), healthTweaks.health);
+		SetStatValue(healthTweaks.health);
 		
-		Init(eventM.GetEvent(PlayerEvents.HealthChanged), tweaks.player);
-		SetStatValue(tweaks.player);
+		wasKilledEvent = eventM.GetEvent(PlayerEvents.WasKilled);
+		lostEvent = eventM.GetEvent(PlayerEvents.Lost);
 
-		UnityEventFloat wasKilledEvent = eventM.GetEvent(PlayerEvents.WasKilled);
-        UnityEventFloat lostEvent = eventM.GetEvent(PlayerEvents.Lost);
+		spawnPoint = playerM.tankObj.transform.position;
+		lives = healthTweaks.lives;
+		eventM.GetEvent(PlayerEvents.WasHit).AddListener(WasHitEvent);
+	}
 
-		eventM.GetEvent(PlayerEvents.WasHit).AddListener((damage) => {
-			AdjustStatValue(-damage);
-			if (GetStatValue() <= 0) {
-                playerM.tankObj.transform.position = spawnPoint;
-                SetStatValue(100);
-                lives -= 1;
+	void WasHitEvent(float damage) {
+		AdjustStatValue(-damage);
+		if (GetStatValue() <= 0) { // Health 0
+			lives -= 1; // Decrease lives
+			wasKilledEvent.Invoke(lives);
 
-				wasKilledEvent.Invoke(lives);
+			if (lives <= 0) { // No more lives
+				DestroyObject(playerM.tankObj);
+				lostEvent.Invoke(0);
+			} else { // Respawn
+				playerM.tankObj.transform.position = spawnPoint;
+				SetStatPercent(100);
 			}
-            if (lives <= 0)
-            {
-                DestroyObject(playerM.tankObj);
-                lostEvent.Invoke(0);
-            }
-		});
+		}
 	}
 }
