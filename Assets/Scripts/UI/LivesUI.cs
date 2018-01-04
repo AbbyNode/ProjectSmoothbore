@@ -9,8 +9,8 @@ public class LivesUI : MonoBehaviour {
 	private Text livesUI;
 
 	void Start() {
-		this.livesUI = this.GetComponent<Text>();
-        livesUI.text = "Lives: " + playerM.health.lives;
+		livesUI = this.GetComponent<Text>();
+		livesUI.text = "Lives: " + BalanceTweaks.GlobalInstance.health.lives;
 
 		EventManager eventM = playerM.eventManager;
 		eventM.GetEvent(PlayerEvents.WasKilled).AddListener((lives) => livesUI.text = "Lives: " + lives);

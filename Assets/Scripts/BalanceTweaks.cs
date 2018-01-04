@@ -10,7 +10,8 @@ public class TankTweaks {
 
 [System.Serializable]
 public class HealthTweaks {
-	public float player = 5;
+	public int lives = 3;
+	public float health = 5;
 }
 
 [System.Serializable]
@@ -19,8 +20,9 @@ public class EnergyTweaks {
 
 	public float move = 0f;
 	public float breakCrate = 1;
-	public float hitPlayer = 2;
-	public float killPlayer = 10;
+
+	public float hitEnemyScale = 1;
+	public float killEnemy = 10;
 }
 
 [System.Serializable]
