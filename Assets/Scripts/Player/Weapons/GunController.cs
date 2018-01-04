@@ -66,4 +66,28 @@ public class GunController : MonoBehaviour {
 			timeAccumulator = 0.0F;
 		}
 	}
+    public void ChangeToShotgun()
+    {
+        if (playerM.energy.GetStatValue() >= 50)
+        {
+            playerM.gunController.WeaponTweaks = BalanceTweaks.GlobalInstance.shotGun;
+            playerM.energy.AdjustStatValue(-50);
+        }
+    }
+    public void ChangeToMachineGun()
+    {
+        if (playerM.energy.GetStatValue() >= 50)
+        {
+            playerM.gunController.WeaponTweaks = BalanceTweaks.GlobalInstance.machineGun;
+            playerM.energy.AdjustStatValue(-50);
+        }
+    }
+    public void ChangeToHeavyGun()
+    {
+        if (playerM.energy.GetStatValue() >= 50)
+        {
+            playerM.gunController.WeaponTweaks = BalanceTweaks.GlobalInstance.heavyGun;
+            playerM.energy.AdjustStatValue(-50);
+        }
+    }
 }
