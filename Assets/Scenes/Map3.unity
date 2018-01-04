@@ -879,17 +879,17 @@ Prefab:
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224208568740895594, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMin.y
@@ -2485,17 +2485,17 @@ Prefab:
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224208568740895594, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMin.y
@@ -5307,20 +5307,20 @@ Prefab:
       propertyPath: m_Name
       value: Player0
       objectReference: {fileID: 0}
-    - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 224208568740895594, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cfc3867593f2e0448fb24d936b84ed1, type: 2}
@@ -8113,17 +8113,17 @@ Prefab:
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224208568740895594, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMin.y
@@ -11567,6 +11567,57 @@ Prefab:
       propertyPath: basicGun.shellPrefab
       value: 
       objectReference: {fileID: 1047042589501386, guid: 2695dff56abb7bd43a727ca9a745a308,
+        type: 2}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: shotGun.shellsPerShot
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: shotGun.shotSpread
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: shotGun.fireDelaySeconds
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: machineGun.fireDelaySeconds
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: machineGun.shellDestroyTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: machineGun.shellDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: shotGun.shellDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: heavyGun.shellDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: shotGun.shellPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: heavyGun.shellPrefab
+      value: 
+      objectReference: {fileID: 1534861390435616, guid: e417a0d164adf2245a5de29203e6a6e3,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2ae892f791484d45b6f8aa54c19bccf, type: 2}

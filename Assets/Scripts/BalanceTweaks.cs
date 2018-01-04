@@ -25,9 +25,7 @@ public class EnergyTweaks {
 
 [System.Serializable]
 public class ModuleCostTweaks {
-	public float basicGun = 10;
-	public float ricochetGun = 20;
-	public float rocketGun = 30;
+	public float gunUpgrade = 50;
 }
 
 [System.Serializable]
@@ -36,10 +34,11 @@ public class WeaponTweaks {
 	public int shellsPerShot = 1;
 	public float shotSpread = 1;
 
-	public GameObject shellPrefab;
 	public float shellDamage = 1;
 	public float shellSpeed = 20;
 	public float shellDestroyTime = 2;
+
+	public GameObject shellPrefab;
 }
 
 public class BalanceTweaks : MonoBehaviour {

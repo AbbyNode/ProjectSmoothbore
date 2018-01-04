@@ -699,6 +699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerM: {fileID: 114759482498518952}
   shellSpawn: {fileID: 4401609004823166}
+  defaultShell: {fileID: 1047042589501386, guid: 2695dff56abb7bd43a727ca9a745a308,
+    type: 2}
 --- !u!114 &114165926588653230
 MonoBehaviour:
   m_ObjectHideFlags: 1
