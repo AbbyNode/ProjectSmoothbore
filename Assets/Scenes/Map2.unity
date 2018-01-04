@@ -537,11 +537,6 @@ Prefab:
       propertyPath: players.Array.data[3]
       value: 
       objectReference: {fileID: 1095642170}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: energy.hitEnemyScale
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2ae892f791484d45b6f8aa54c19bccf, type: 2}
   m_IsPrefabParent: 0
