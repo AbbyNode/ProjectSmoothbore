@@ -7,7 +7,7 @@ public class UpgradeSelect : MonoBehaviour {
 
 	public CanvasGroup canvasGroupTier1;
 	public CanvasGroup canvasGroupTier2;
-	// public CanvasGroup canvasGroupTier3;
+	public CanvasGroup canvasGroupTier3;
 
 	void Start() {
 		EventManager eventM = playerM.eventManager;
@@ -23,17 +23,15 @@ public class UpgradeSelect : MonoBehaviour {
 			case 2:
 				canvasGroupTier2.alpha = 1;
 				break;
-			/*
 			case 3:
 				canvasGroupTier3.alpha = 1;
 				break;
-			*/
 		}
 	}
 
 	void UpgradeApplied(float f) {
 		canvasGroupTier1.alpha = 0;
 		canvasGroupTier2.alpha = 0;
-		// canvasGroupTier3.alpha = 0;
+		canvasGroupTier3.alpha = 0;
 	}
 }

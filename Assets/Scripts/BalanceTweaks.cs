@@ -11,7 +11,9 @@ public class TankTweaks {
 [System.Serializable]
 public class HealthTweaks {
 	public int lives = 3;
-	public float health = 5;
+	public float lightHullHealth = 60;
+	public float medHullHealth = 100;
+	public float heavyHullHealth = 200;
 }
 
 [System.Serializable]
@@ -46,6 +48,13 @@ public class WeaponTweaks {
 }
 
 [System.Serializable]
+public class HullPrefabs {
+	public GameObject lightHull;
+	public GameObject medHull;
+	public GameObject heavyHull;
+}
+
+[System.Serializable]
 public class WeaponPrefabs {
 	public GameObject basicGun;
 	public GameObject machineGun;
@@ -68,10 +77,12 @@ public class BalanceTweaks : MonoBehaviour {
 		}
 	}
 
-	public TankTweaks tank;
 	public HealthTweaks health;
 	public EnergyTweaks energy;
 	public ModuleCostTweaks moduleCosts;
+	public TankTweaks lightTank;
+	public TankTweaks medTank;
+	public TankTweaks heavyTank;
 	public WeaponTweaks basicGun;
 	public WeaponTweaks machineGun;
 	public WeaponTweaks shotGun;
@@ -80,6 +91,7 @@ public class BalanceTweaks : MonoBehaviour {
 	public WeaponTweaks flamethrowerGun;
 	public WeaponTweaks explosiveGun;
 
+	public HullPrefabs hullPrefabs;
 	public WeaponPrefabs weaponPrefabs;
 
 	private void Awake() {

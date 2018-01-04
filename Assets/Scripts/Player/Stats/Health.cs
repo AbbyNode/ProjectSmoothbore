@@ -13,8 +13,8 @@ public class Health : PlayerStat {
 		EventManager eventM = playerM.eventManager;
 		HealthTweaks healthTweaks = BalanceTweaks.GlobalInstance.health;
 
-		Init(eventM.GetEvent(PlayerEvents.HealthChanged), healthTweaks.health);
-		SetStatValue(healthTweaks.health);
+		Init(eventM.GetEvent(PlayerEvents.HealthChanged), healthTweaks.medHullHealth);
+		SetStatValue(healthTweaks.medHullHealth);
 		
 		wasKilledEvent = eventM.GetEvent(PlayerEvents.WasKilled);
 		lostEvent = eventM.GetEvent(PlayerEvents.Lost);

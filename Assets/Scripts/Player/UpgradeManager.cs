@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour {
-	public const int TOTAL_TIERS = 2;
+	public const int TOTAL_TIERS = 3;
 
 	public PlayerManager playerM;
 
@@ -99,13 +99,12 @@ public class UpgradeManager : MonoBehaviour {
 		switch (option) {
 			default:
 			case 1:
-
+				ChangeHull(BalanceTweaks.GlobalInstance.hullPrefabs.heavyHull, BalanceTweaks.GlobalInstance.health.heavyHullHealth, BalanceTweaks.GlobalInstance.heavyTank);
 				break;
 			case 2:
-
 				break;
 			case 3:
-
+				ChangeHull(BalanceTweaks.GlobalInstance.hullPrefabs.lightHull, BalanceTweaks.GlobalInstance.health.lightHullHealth, BalanceTweaks.GlobalInstance.lightTank);
 				break;
 		}
 		playerM.energy.AdjustStatValue(-BalanceTweaks.GlobalInstance.moduleCosts.hullUpgrade1);
@@ -117,11 +116,28 @@ public class UpgradeManager : MonoBehaviour {
 		Destroy(oldGun);
 
 		playerM.gunObj = newGun;
+		playerM.gunObj.layer = PlayerManager.LAYER_START_INDEX + playerM.playerNum;
 
 		playerM.gunController = playerM.gunObj.GetComponent<GunController>();
 		playerM.gunController.playerM = playerM;
 
 		playerM.gunController.WeaponTweaks = tweaks;
+	}
+
+	private void ChangeHull(GameObject prefab, float health, TankTweaks tankTweaks) {
+		float healthPercent = playerM.health.GetStatPercent();
+
+		GameObject oldHull = playerM.hullObj;
+		GameObject newHull = Instantiate(prefab, oldHull.transform.position, oldHull.transform.rotation, playerM.tankObj.transform);
+		Destroy(oldHull);
+
+		playerM.hullObj = newHull;
+		playerM.hullObj.layer = PlayerManager.LAYER_START_INDEX + playerM.playerNum;
+
+		playerM.health.SetMaxValue(health);
+		playerM.health.SetStatPercent(healthPercent);
+
+		playerM.tankController.TankTweaksProp = tankTweaks;
 	}
 
 	public void CheckNextThreshold() {

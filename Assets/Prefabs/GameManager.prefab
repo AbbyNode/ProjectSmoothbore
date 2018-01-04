@@ -60,12 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f1b4726eff6c94998daaca84b50ca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tank:
-    maxSpeed: 10
-    rotationSpeed: 180
   health:
     lives: 3
-    health: 100
+    lightHullHealth: 60
+    medHullHealth: 100
+    heavyHullHealth: 200
   energy:
     maxEnergy: 100
     move: 0
@@ -76,6 +75,15 @@ MonoBehaviour:
     gunUpgrade1: 40
     gunUpgrade2: 60
     hullUpgrade1: 50
+  lightTank:
+    maxSpeed: 20
+    rotationSpeed: 360
+  medTank:
+    maxSpeed: 10
+    rotationSpeed: 220
+  heavyTank:
+    maxSpeed: 6
+    rotationSpeed: 180
   basicGun:
     fireDelaySeconds: 0.5
     shellsPerShot: 1
@@ -134,6 +142,12 @@ MonoBehaviour:
     shellSpeed: 20
     shellDestroyTime: 2
     shellPrefab: {fileID: 1860312191452296, guid: d25974f0480c7364bba389b5d2e16e9c,
+      type: 2}
+  hullPrefabs:
+    lightHull: {fileID: 1890227752645878, guid: 008c9a5b83d3da746a593d8cbd8e335f,
+      type: 2}
+    medHull: {fileID: 1890227752645878, guid: 8033db3fdfc1f814380a7361b61ae243, type: 2}
+    heavyHull: {fileID: 1890227752645878, guid: b170715ea8b51d1458df29ba350d3737,
       type: 2}
   weaponPrefabs:
     basicGun: {fileID: 1419321387601524, guid: fff8e9d36e933ef4386dc24972761597, type: 2}
