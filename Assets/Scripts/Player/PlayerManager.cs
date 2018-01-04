@@ -8,7 +8,8 @@ public class PlayerManager : MonoBehaviour {
 
 	public EventManager eventManager;
 	public InputManager inputManager;
-    
+	public UpgradeManager upgradeManager;
+
 	public Health health;
 	public Energy energy;
 

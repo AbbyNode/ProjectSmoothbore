@@ -6,6 +6,9 @@ public class PlayerEvents {
 	public const string EnergyChanged = "EnergyChanged";
 	public const string HealthChanged = "HealthChanged";
 
+	public const string UpgradeAvailable = "UpgradeAvailable";
+	public const string UpgradeApplied = "UpgradeApplied";
+
 	public const string WasHit = "WasHit";
 	public const string WasKilled = "WasKilled";
     public const string Lost = "Lost";
