@@ -6354,11 +6354,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4312750853044646, guid: 2cfc3867593f2e0448fb24d936b84ed1,
     type: 2}
   m_PrefabInternal: {fileID: 299272058}
---- !u!225 &331927760 stripped
-CanvasGroup:
-  m_PrefabParentObject: {fileID: 225451714453143204, guid: 2cfc3867593f2e0448fb24d936b84ed1,
-    type: 2}
-  m_PrefabInternal: {fileID: 870270475}
 --- !u!1 &363439309
 GameObject:
   m_ObjectHideFlags: 0
@@ -7477,11 +7472,6 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    - target: {fileID: 114420128518054892, guid: 2cfc3867593f2e0448fb24d936b84ed1,
-        type: 2}
-      propertyPath: canvasGroupTier2
-      value: 
-      objectReference: {fileID: 331927760}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cfc3867593f2e0448fb24d936b84ed1, type: 2}
   m_IsPrefabParent: 0
@@ -9779,11 +9769,6 @@ Prefab:
       propertyPath: players.Array.data[3]
       value: 
       objectReference: {fileID: 177398187}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: energy.hitEnemyScale
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2ae892f791484d45b6f8aa54c19bccf, type: 2}
   m_IsPrefabParent: 0

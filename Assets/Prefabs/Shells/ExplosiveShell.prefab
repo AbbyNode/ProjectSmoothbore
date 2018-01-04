@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitTag: 
-  objToInst: {fileID: 1451702151694346, guid: 196555386598cca4d83416639fd8e72a, type: 2}
+  objToInst: {fileID: 1451702151694346, guid: 49eb40e0275498545819e190cead8858, type: 2}
 --- !u!114 &114426423523235554
 MonoBehaviour:
   m_ObjectHideFlags: 1
