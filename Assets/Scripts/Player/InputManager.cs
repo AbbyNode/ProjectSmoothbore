@@ -54,7 +54,7 @@ public class InputManager : MonoBehaviour {
 		}
 
 		// Fire
-		if (Input.GetButtonDown(fire)) {
+		if (Input.GetAxisRaw(fire) == 1) {
 			gunC.Fire();
 		}
 
