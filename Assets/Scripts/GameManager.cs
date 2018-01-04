@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public const string map1Scene = "Map1";
     public const string map2Scene = "Map2";
     public const string map3Scene = "Map3";
+    public const string controlsScene = "Controls";
 
     public static int winner;
 

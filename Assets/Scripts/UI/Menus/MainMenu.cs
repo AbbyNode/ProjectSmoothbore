@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour {
 	public Button map1Button;
 	public Button map2Button;
     public Button map3Button;
+    public Button controlsButton;
 
     void Start() {
 		map1Button.onClick.AddListener(() => {
@@ -19,6 +20,9 @@ public class MainMenu : MonoBehaviour {
 		});
         map3Button.onClick.AddListener(() => {
             SceneManager.LoadScene(GameManager.map3Scene);
+        });
+        controlsButton.onClick.AddListener(() => {
+            SceneManager.LoadScene(GameManager.controlsScene);
         });
     }
 }
