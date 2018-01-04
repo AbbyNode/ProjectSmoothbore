@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 212729089951732574}
   - component: {fileID: 95685125161745554}
   - component: {fileID: 82576113003771862}
+  - component: {fileID: 114652694325884856}
   - component: {fileID: 50016969333936176}
   - component: {fileID: 58971905718520582}
-  - component: {fileID: 114935782109285894}
+  - component: {fileID: 114247851420601214}
   m_Layer: 0
   m_Name: ExplosiveShell_Explosion
   m_TagString: Shell
@@ -177,7 +178,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114935782109285894
+--- !u!114 &114247851420601214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451702151694346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4d3ace3adea274f92a84720b68e0ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 0}
+--- !u!114 &114652694325884856
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -25,6 +25,7 @@ public class GunController : MonoBehaviour {
 		}
 		set {
 			weaponTweaks = value;
+
 			if (weaponTweaks.shellPrefab == null) {
 				weaponTweaks.shellPrefab = defaultShell;
 			}
@@ -37,7 +38,9 @@ public class GunController : MonoBehaviour {
 	private float timeAccumulator = 0.0f;
 
 	void Start() {
-		WeaponTweaks = BalanceTweaks.GlobalInstance.basicGun;
+		if (WeaponTweaks == null) {
+			WeaponTweaks = BalanceTweaks.GlobalInstance.basicGun;
+		}
 	}
 
 	void Update() {
@@ -59,7 +62,6 @@ public class GunController : MonoBehaviour {
 
 				ShellController shellC = shellInst.GetComponent<ShellController>();
 				shellC.playerM = playerM;
-
 				shellC.Init(weaponTweaks.shellDamage, weaponTweaks.shellSpeed, weaponTweaks.shellDestroyTime);
 			}
 

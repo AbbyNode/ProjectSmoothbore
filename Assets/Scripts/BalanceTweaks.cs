@@ -29,7 +29,7 @@ public class EnergyTweaks {
 public class ModuleCostTweaks {
 	public float gunUpgrade1 = 40;
 	public float gunUpgrade2 = 60;
-	// public float hullUpgrade1 = 50;
+	public float hullUpgrade1 = 50;
 }
 
 [System.Serializable]
@@ -43,6 +43,17 @@ public class WeaponTweaks {
 	public float shellDestroyTime = 2;
 
 	public GameObject shellPrefab;
+}
+
+[System.Serializable]
+public class WeaponPrefabs {
+	public GameObject basicGun;
+	public GameObject machineGun;
+	public GameObject shotGun;
+	public GameObject heavyGun;
+	public GameObject sniperGun;
+	public GameObject flamethrowerGun;
+	public GameObject explosiveGun;
 }
 
 public class BalanceTweaks : MonoBehaviour {
@@ -66,8 +77,10 @@ public class BalanceTweaks : MonoBehaviour {
 	public WeaponTweaks shotGun;
 	public WeaponTweaks heavyGun;
 	public WeaponTweaks sniperGun;
-    public WeaponTweaks flamethrowerGun;
-    public WeaponTweaks explosiveGun;
+	public WeaponTweaks flamethrowerGun;
+	public WeaponTweaks explosiveGun;
+
+	public WeaponPrefabs weaponPrefabs;
 
 	private void Awake() {
 		if (_globalInstance != null && _globalInstance != this) {

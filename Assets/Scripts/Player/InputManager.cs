@@ -17,8 +17,7 @@ public class InputManager : MonoBehaviour {
 	// private InventoryManager inventoryM;
 	// private ModuleGenerator1 moduleGenerator;
 	private TankController tankC;
-	private GunController gunC;
-
+	
 	private UpgradeManager upgradeM;
 
 	void Start() {
@@ -36,7 +35,6 @@ public class InputManager : MonoBehaviour {
 		// inventoryM = playerM.inventoryManager;
 		// moduleGenerator1 = playerM.moduleGenerator;
 		tankC = playerM.tankController;
-		gunC = playerM.gunController;
 
 		upgradeM = playerM.upgradeManager;
 	}
@@ -55,7 +53,7 @@ public class InputManager : MonoBehaviour {
 
 		// Fire
 		if (Input.GetAxisRaw(fire) == 1) {
-			gunC.Fire();
+			playerM.gunController.Fire();
 		}
 
 		// Generate Module

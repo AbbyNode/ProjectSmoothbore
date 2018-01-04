@@ -75,6 +75,7 @@ MonoBehaviour:
   moduleCosts:
     gunUpgrade1: 40
     gunUpgrade2: 60
+    hullUpgrade1: 50
   basicGun:
     fireDelaySeconds: 0.5
     shellsPerShot: 1
@@ -129,10 +130,22 @@ MonoBehaviour:
     fireDelaySeconds: 0.5
     shellsPerShot: 1
     shotSpread: 1
-    shellDamage: 40
+    shellDamage: 20
     shellSpeed: 20
     shellDestroyTime: 2
     shellPrefab: {fileID: 1860312191452296, guid: d25974f0480c7364bba389b5d2e16e9c,
+      type: 2}
+  weaponPrefabs:
+    basicGun: {fileID: 1419321387601524, guid: fff8e9d36e933ef4386dc24972761597, type: 2}
+    machineGun: {fileID: 1419321387601524, guid: 01d56377c47ab524cbc2b33bddb6716b,
+      type: 2}
+    shotGun: {fileID: 1419321387601524, guid: 49ee52f3290e0b749905657eb15ed6f2, type: 2}
+    heavyGun: {fileID: 1419321387601524, guid: e7a114165c323f545ab9b114439a3a53, type: 2}
+    sniperGun: {fileID: 1419321387601524, guid: de6fb9225286db34189758f2c7a824b5,
+      type: 2}
+    flamethrowerGun: {fileID: 1419321387601524, guid: 163b10847c3aee3418bb7b560e7cee7c,
+      type: 2}
+    explosiveGun: {fileID: 1419321387601524, guid: 41d17762d0edd824c8d6e238a8728c0d,
       type: 2}
 --- !u!114 &114409076818246300
 MonoBehaviour:

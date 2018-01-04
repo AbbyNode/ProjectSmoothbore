@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 222346438467312884}
   - component: {fileID: 114312075558491312}
   m_Layer: 5
-  m_Name: Module1
+  m_Name: MachineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 222547342320250626}
   - component: {fileID: 114847772080655006}
   m_Layer: 5
-  m_Name: Module2
+  m_Name: ExplosiveGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 222331179856895616}
   - component: {fileID: 114373024243666424}
   m_Layer: 5
-  m_Name: Module0
+  m_Name: ShotGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 222896854908202932}
   - component: {fileID: 114396221356010060}
   m_Layer: 5
-  m_Name: Module1
+  m_Name: FlamethrowerGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 222873366329672438}
   - component: {fileID: 114418698342202694}
   m_Layer: 5
-  m_Name: Module2
+  m_Name: HeavyGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 222513791087753966}
   - component: {fileID: 114882119438198880}
   m_Layer: 5
-  m_Name: Module0
+  m_Name: SniperGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -720,7 +720,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.2858796, y: 0.48526928}
-    oldSize: {x: 3.14, y: 1.23}
+    oldSize: {x: 3, y: 1.18}
     newSize: {x: 3.14, y: 1.33}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1106,7 +1106,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3a266f92acdb80a48a8a53f7d2d6aeed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db766ff0beb7ba341af717473fd8e71c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1133,7 +1133,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6dded5153dd6e444dbffdf016a2b83b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 243671c5d4e29da4ab0a5b37194f285d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1208,7 +1208,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8d5cd503ffe96b04090ef2f328100723, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b1743f705f2fe94abb739517e619721, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1587,7 +1587,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8d5cd503ffe96b04090ef2f328100723, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8097afc8b6bdc5a4295f603019d12adb, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1662,7 +1662,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3a266f92acdb80a48a8a53f7d2d6aeed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: baf81817bc6e71e42b7ebdcfaa994da3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
