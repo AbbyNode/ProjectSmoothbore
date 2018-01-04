@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -878,17 +879,17 @@ Prefab:
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224208568740895594, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMin.y
@@ -2484,17 +2485,17 @@ Prefab:
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224208568740895594, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMin.y
@@ -5306,20 +5307,20 @@ Prefab:
       propertyPath: m_Name
       value: Player0
       objectReference: {fileID: 0}
-    - target: {fileID: 114124659125549614, guid: 2cfc3867593f2e0448fb24d936b84ed1,
+    - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
-      propertyPath: shellsPerShot
-      value: 1
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114124659125549614, guid: 2cfc3867593f2e0448fb24d936b84ed1,
+    - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
-      propertyPath: shellSpreadDeg
-      value: 1
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114124659125549614, guid: 2cfc3867593f2e0448fb24d936b84ed1,
+    - target: {fileID: 224208568740895594, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
-      propertyPath: fireDelaySeconds
-      value: 0.4
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cfc3867593f2e0448fb24d936b84ed1, type: 2}
@@ -8112,17 +8113,17 @@ Prefab:
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224806752649168586, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224208568740895594, guid: 2cfc3867593f2e0448fb24d936b84ed1,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMin.y
@@ -11561,6 +11562,12 @@ Prefab:
       propertyPath: players.Array.data[3]
       value: 
       objectReference: {fileID: 177398187}
+    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
+        type: 2}
+      propertyPath: basicGun.shellPrefab
+      value: 
+      objectReference: {fileID: 1047042589501386, guid: 2695dff56abb7bd43a727ca9a745a308,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2ae892f791484d45b6f8aa54c19bccf, type: 2}
   m_IsPrefabParent: 0
