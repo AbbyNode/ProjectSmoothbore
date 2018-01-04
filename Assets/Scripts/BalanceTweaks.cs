@@ -66,6 +66,8 @@ public class BalanceTweaks : MonoBehaviour {
 	public WeaponTweaks shotGun;
 	public WeaponTweaks heavyGun;
 	public WeaponTweaks sniperGun;
+    public WeaponTweaks flamethrower;
+    public WeaponTweaks explosiveGun;
 
 	private void Awake() {
 		if (_globalInstance != null && _globalInstance != this) {
