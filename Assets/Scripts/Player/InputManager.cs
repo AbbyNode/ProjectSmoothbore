@@ -65,21 +65,21 @@ public class InputManager : MonoBehaviour
         // }
 
         //Select Module
-        if (Input.GetButtonDown(selectOne))
+        if (Input.GetButtonDown(selectOne) && playerM.energy.GetStatValue() >= 50)
         {
             gunC.WeaponTweaks = BalanceTweaks.GlobalInstance.shotGun;
-            Debug.Log("Shotgun");
+            playerM.energy.AdjustStatValue(-50);
         }
 
-        if (Input.GetButtonDown(selectTwo))
+        if (Input.GetButtonDown(selectTwo) && playerM.energy.GetStatValue() >= 50)
         {
             gunC.WeaponTweaks = BalanceTweaks.GlobalInstance.machineGun;
-            Debug.Log("MachineGun");
+            playerM.energy.AdjustStatValue(-50);
         }
-        if (Input.GetButtonDown(selectThree))
+        if (Input.GetButtonDown(selectThree) && playerM.energy.GetStatValue() >= 50)
         {
             gunC.WeaponTweaks = BalanceTweaks.GlobalInstance.heavyGun;
-            Debug.Log("HeavyGun");
+            playerM.energy.AdjustStatValue(-50);
         }
 
     }
