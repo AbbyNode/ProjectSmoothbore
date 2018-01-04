@@ -70,11 +70,10 @@ MonoBehaviour:
     maxEnergy: 100
     move: 0
     breakCrate: 1
-    hitEnemyScale: 0.5
+    hitEnemyScale: 1
     killEnemy: 6
   moduleCosts:
     gunUpgrade1: 40
-    hullUpgrade1: 50
     gunUpgrade2: 60
   basicGun:
     fireDelaySeconds: 0.5
@@ -133,7 +132,7 @@ MonoBehaviour:
     shellDamage: 40
     shellSpeed: 20
     shellDestroyTime: 2
-    shellPrefab: {fileID: 1451702151694346, guid: 49eb40e0275498545819e190cead8858,
+    shellPrefab: {fileID: 1860312191452296, guid: d25974f0480c7364bba389b5d2e16e9c,
       type: 2}
 --- !u!114 &114409076818246300
 MonoBehaviour:
