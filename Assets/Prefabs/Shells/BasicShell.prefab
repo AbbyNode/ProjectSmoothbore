@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61522413073466090}
   - component: {fileID: 114624736260432004}
   - component: {fileID: 114702704547771570}
+  - component: {fileID: 114772770382548326}
   m_Layer: 0
   m_Name: BasicShell
   m_TagString: Shell
@@ -101,7 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerM: {fileID: 0}
-  damage: 1
 --- !u!114 &114702704547771570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,6 +115,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitTag: 
   objToInst: {fileID: 1451702151694346, guid: 196555386598cca4d83416639fd8e72a, type: 2}
+--- !u!114 &114772770382548326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1047042589501386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3de7338800ee3e438cd312de063e085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitTag: 
 --- !u!212 &212294953222700118
 SpriteRenderer:
   m_ObjectHideFlags: 1

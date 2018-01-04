@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1893754773826814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -19.9, y: 18.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
     maxEnergy: 100
     move: 0
     breakCrate: 1
-    hitEnemyScale: 1
+    hitEnemyScale: 0.5
     killEnemy: 6
   moduleCosts:
     gunUpgrade1: 40
@@ -130,10 +130,11 @@ MonoBehaviour:
     fireDelaySeconds: 0.5
     shellsPerShot: 1
     shotSpread: 1
-    shellDamage: 1
+    shellDamage: 40
     shellSpeed: 20
     shellDestroyTime: 2
-    shellPrefab: {fileID: 0}
+    shellPrefab: {fileID: 1451702151694346, guid: 49eb40e0275498545819e190cead8858,
+      type: 2}
 --- !u!114 &114409076818246300
 MonoBehaviour:
   m_ObjectHideFlags: 1

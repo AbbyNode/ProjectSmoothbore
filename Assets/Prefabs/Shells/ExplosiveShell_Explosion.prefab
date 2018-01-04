@@ -22,10 +22,13 @@ GameObject:
   - component: {fileID: 212729089951732574}
   - component: {fileID: 95685125161745554}
   - component: {fileID: 82576113003771862}
+  - component: {fileID: 50016969333936176}
+  - component: {fileID: 58971905718520582}
+  - component: {fileID: 114034701496038974}
   - component: {fileID: 114935782109285894}
   m_Layer: 0
-  m_Name: Explosion
-  m_TagString: Untagged
+  m_Name: ExplosiveShell
+  m_TagString: Shell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,12 +40,47 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451702151694346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.711498, y: 30.313488, z: 0}
-  m_LocalScale: {x: 1.6699889, y: 1.6699884, z: 1.6699884}
+  m_LocalPosition: {x: -31.199482, y: 18.1561, z: 0}
+  m_LocalScale: {x: 9.092059, y: 9.092059, z: 9.092059}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50016969333936176
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451702151694346}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &58971905718520582
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451702151694346}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.35499996
 --- !u!82 &82576113003771862
 AudioSource:
   m_ObjectHideFlags: 1
@@ -140,6 +178,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114034701496038974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451702151694346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4d3ace3adea274f92a84720b68e0ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerM: {fileID: 0}
 --- !u!114 &114935782109285894
 MonoBehaviour:
   m_ObjectHideFlags: 1

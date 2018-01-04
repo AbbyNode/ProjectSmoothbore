@@ -28,8 +28,8 @@ public class EnergyTweaks {
 [System.Serializable]
 public class ModuleCostTweaks {
 	public float gunUpgrade1 = 40;
-	public float hullUpgrade1 = 50;
 	public float gunUpgrade2 = 60;
+	// public float hullUpgrade1 = 50;
 }
 
 [System.Serializable]

@@ -48,7 +48,7 @@ public class UpgradeManager : MonoBehaviour {
 				Tier2(option);
 				break;
 			case 3:
-				Tier3(option);
+				Tier2(option);
 				break;
 		}
 
@@ -78,6 +78,7 @@ public class UpgradeManager : MonoBehaviour {
 		playerM.energy.AdjustStatValue(-BalanceTweaks.GlobalInstance.moduleCosts.gunUpgrade1);
 	}
 
+	/*
 	private void Tier2(int option) {
 		switch (option) {
 			default:
@@ -90,8 +91,9 @@ public class UpgradeManager : MonoBehaviour {
 		}
 		playerM.energy.AdjustStatValue(-BalanceTweaks.GlobalInstance.moduleCosts.hullUpgrade1);
 	}
+	*/
 
-	private void Tier3(int option) {
+	private void Tier2(int option) {
 		switch (option) {
 			default:
 			case 1:
@@ -114,11 +116,13 @@ public class UpgradeManager : MonoBehaviour {
 				upgradeThreshold = moduleCosts.gunUpgrade1;
 				break;
 			case 2:
-				upgradeThreshold = moduleCosts.hullUpgrade1;
+				upgradeThreshold = moduleCosts.gunUpgrade2;
 				break;
+			/*
 			case 3:
 				upgradeThreshold = moduleCosts.gunUpgrade2;
 				break;
+			*/
 		}
 	}
 
