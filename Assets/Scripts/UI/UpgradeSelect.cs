@@ -11,7 +11,7 @@ public class UpgradeSelect : MonoBehaviour
         EventManager eventM = playerM.eventManager;
         eventM.GetEvent(PlayerEvents.EnergyChanged).AddListener((f) =>
         {
-            if (playerM.energy.GetStatValue() >= BalanceTweaks.GlobalInstance.moduleCosts.gunUpgrade)
+            if (playerM.energy.GetStatValue() >= BalanceTweaks.GlobalInstance.moduleCosts.gunUpgrade1)
             {
                 this.GetComponent<CanvasGroup>().alpha = 1;
             }
