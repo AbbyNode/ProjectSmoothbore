@@ -8144,11 +8144,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4312750853044646, guid: 2cfc3867593f2e0448fb24d936b84ed1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 75.8
+      value: 76.9
       objectReference: {fileID: 0}
     - target: {fileID: 4312750853044646, guid: 2cfc3867593f2e0448fb24d936b84ed1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 45.3
+      value: 42.9
       objectReference: {fileID: 0}
     - target: {fileID: 4312750853044646, guid: 2cfc3867593f2e0448fb24d936b84ed1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11802,63 +11802,6 @@ Prefab:
       propertyPath: players.Array.data[3]
       value: 
       objectReference: {fileID: 177398187}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: basicGun.shellPrefab
-      value: 
-      objectReference: {fileID: 1047042589501386, guid: 2695dff56abb7bd43a727ca9a745a308,
-        type: 2}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: shotGun.shellsPerShot
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: shotGun.shotSpread
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: shotGun.fireDelaySeconds
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: machineGun.fireDelaySeconds
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: machineGun.shellDestroyTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: machineGun.shellDamage
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: shotGun.shellDamage
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: heavyGun.shellDamage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: shotGun.shellPrefab
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201847298923654, guid: d2ae892f791484d45b6f8aa54c19bccf,
-        type: 2}
-      propertyPath: heavyGun.shellPrefab
-      value: 
-      objectReference: {fileID: 1534861390435616, guid: e417a0d164adf2245a5de29203e6a6e3,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2ae892f791484d45b6f8aa54c19bccf, type: 2}
   m_IsPrefabParent: 0
