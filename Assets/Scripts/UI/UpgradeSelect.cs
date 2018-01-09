@@ -5,6 +5,9 @@ using UnityEngine;
 public class UpgradeSelect : MonoBehaviour {
 	public PlayerManager playerM;
 
+	public CanvasGroup canvasGroupGlow;
+	public PulseCanvasAlpha glowPulse;
+
 	public CanvasGroup canvasGroupTier1;
 	public CanvasGroup canvasGroupTier2;
 	public CanvasGroup canvasGroupTier3;
@@ -16,6 +19,9 @@ public class UpgradeSelect : MonoBehaviour {
 	}
 
 	void UpgradeAvailable(float f) {
+		glowPulse.enabled = true;
+		canvasGroupGlow.alpha = 1;
+
 		switch (playerM.upgradeManager.NextTier) {
 			case 1:
 				canvasGroupTier1.alpha = 1;
@@ -30,6 +36,9 @@ public class UpgradeSelect : MonoBehaviour {
 	}
 
 	void UpgradeApplied(float f) {
+		glowPulse.enabled = false;
+		canvasGroupGlow.alpha = 0;
+
 		canvasGroupTier1.alpha = 0;
 		canvasGroupTier2.alpha = 0;
 		canvasGroupTier3.alpha = 0;
