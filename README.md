@@ -7,7 +7,7 @@ This is a game.
 Credits:  
 Abby Shah  
 Aron Ly  
-Matthew Watada  
 Marvin Jupiter Vargas  
+Matthew Watada  
 Yu Yi Zhang  
 Trung Kien Ngo  
